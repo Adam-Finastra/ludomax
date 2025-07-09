@@ -1,0 +1,70 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+using static UnityEngine.Rendering.DebugUI;
+using Unity.VisualScripting;
+
+public class Uimanager : MonoBehaviour
+{
+    [Header("Panels")]
+    [SerializeField] private GameObject localPanel;
+    [SerializeField] private GameObject selectionPanel;
+
+    [Header("Default Player Names")]
+    [SerializeField] private TMP_InputField [] playername ;
+    
+
+    [Header("Settings")]
+    [SerializeField] private int nextSceneIndex = 1;
+
+    private bool panelOn = true;
+    [SerializeField]private string[] n = new string[4];
+   
+
+    private void Start()
+    {
+        if (localPanel != null && selectionPanel != null)
+        {
+            localPanel.SetActive(panelOn);
+            selectionPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Panels not assigned in inspector!");
+        }
+    }
+   
+
+    public void SaveAssignedNamesAndLoadNext()
+    {
+        string s = "";
+        for (int i = 0; i < 4; i++)
+        {
+           
+            PlayerPrefs.SetString("player" + i, playername[i].text);
+            PlayerPrefs.Save();
+        
+        }
+     
+        
+       
+
+        Debug.Log("Saved assigned names to PlayerPrefs.");
+       LoadNextScene();
+    }
+
+    private void LoadNextScene()
+    {
+       SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    public void ToggleSelectionPanel()
+    {
+        if (localPanel != null && selectionPanel != null)
+        {
+            panelOn = !panelOn;
+            localPanel.SetActive(panelOn);
+            selectionPanel.SetActive(true);
+        }
+    }
+}
