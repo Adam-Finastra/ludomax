@@ -8,8 +8,8 @@ public class DiceScript : MonoBehaviour
     [SerializeField] GameObject diceAnimation;
     [SerializeField] GameObject diceObjects;
     [SerializeField] bool isLog = false;
-    [SerializeField] bool isDebug = false;
-    [SerializeField] int rollValue;
+    [SerializeField] bool isDebug = true;
+    [SerializeField] int rollValue = 2;
 
     private int lastValue;
     private Image[] diceSprites;

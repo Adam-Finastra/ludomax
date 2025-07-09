@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TeamController : MonoBehaviour
 {
-    [SerializeField] Button[] TeamUI;
+    [SerializeField] GameObject[] TeamUI;
     [SerializeField] int teamIndex = 0;
     [SerializeField] bool isDebug;
 
@@ -26,7 +25,12 @@ public class TeamController : MonoBehaviour
     {
         for (int i = 0; i < TeamUI.Length; i++)
         {
-            TeamUI[i].enabled = (i == teamIndex);
+            // if (i == teamIndex)
+            // {
+            //     TeamUI[i].SetActive(true);
+            //     Logger($" team index {i} is turned off");
+            // }
+            TeamUI[i].SetActive(i == teamIndex);
         }
     }
 
