@@ -7,20 +7,17 @@ public class DiceScript : MonoBehaviour
 {
     [SerializeField] GameObject diceAnimation;
     [SerializeField] GameObject diceObjects;
-    [SerializeField] bool isLog;
-    [SerializeField] bool isDebug;
+    [SerializeField] bool isLog = false;
+    [SerializeField] bool isDebug = false;
     [SerializeField] int rollValue;
 
     private int lastValue;
     private Image[] diceSprites;
-    // public Action<int> DiceRoll;
+    public static Action<int> DiceRoll;
 
-    void Awake()
-    {
-        diceAnimation.SetActive(false);
-    }
     void Start()
     {
+        diceAnimation.SetActive(false);
         diceSprites = diceObjects.GetComponentsInChildren<Image>();
 
         foreach (var item in diceSprites)
@@ -49,7 +46,7 @@ public class DiceScript : MonoBehaviour
         }
         Log($"dice rolled :{rollValue}");
         ShowDice(rollValue - 1);
-        // DiceRoll?.Invoke(rollValue);
+        DiceRoll?.Invoke(rollValue);
     }
 
     private void ShowDice(int value)
