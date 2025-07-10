@@ -14,11 +14,10 @@ public class Uimanager : MonoBehaviour
     [SerializeField] private TMP_InputField [] playername ;
     
 
-    [Header("Settings")]
-    [SerializeField] private int nextSceneIndex = 1;
 
     private bool panelOn = true;
-    [SerializeField]private string[] n = new string[4];
+    private string[] n = new string[4];
+    int b = 0;
    
 
     private void Start()
@@ -32,12 +31,13 @@ public class Uimanager : MonoBehaviour
         {
             Debug.LogWarning("Panels not assigned in inspector!");
         }
+       
     }
    
 
     public void SaveAssignedNamesAndLoadNext()
     {
-        string s = "";
+        
         for (int i = 0; i < 4; i++)
         {
            
@@ -55,7 +55,8 @@ public class Uimanager : MonoBehaviour
 
     private void LoadNextScene()
     {
-       SceneManager.LoadScene(nextSceneIndex);
+
+        SceneManager.LoadScene((PlayerPrefs.GetInt("Index", 0)));
     }
 
     public void ToggleSelectionPanel()

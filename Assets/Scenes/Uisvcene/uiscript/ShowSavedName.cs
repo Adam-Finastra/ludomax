@@ -13,6 +13,7 @@ public class ShowSavedNames : MonoBehaviour
         {
             string name1 = PlayerPrefs.GetString("player" + i, "Empty");
             if (player1Text != null) player1Text[i].text = name1;
+            Debug.Log($" players pref is working {player1Text[i].text} ");   
         }
     
     }
