@@ -15,7 +15,7 @@ public class Uimanager : MonoBehaviour
     
 
     [Header("Settings")]
-    [SerializeField] private int nextSceneIndex = 1;
+    
 
     private bool panelOn = true;
     [SerializeField]private string[] n = new string[4];
@@ -55,7 +55,7 @@ public class Uimanager : MonoBehaviour
 
     private void LoadNextScene()
     {
-       SceneManager.LoadScene(nextSceneIndex);
+       SceneManager.LoadScene(PlayerPrefs.GetInt("Index",0));
     }
 
     public void ToggleSelectionPanel()
