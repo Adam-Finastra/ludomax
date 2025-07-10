@@ -4,7 +4,6 @@ using UnityEngine;
 public class TeamController : MonoBehaviour
 {
     [SerializeField] List<GameObject> Players = new List<GameObject>();
-    // [SerializeField] int playerCount;
     [SerializeField] GameObject[] TeamUI;
     [SerializeField] int teamIndex = 0;
     [SerializeField] bool isDebug;
@@ -13,7 +12,6 @@ public class TeamController : MonoBehaviour
 
     void Start()
     {
-        ManagePlayers();
         TurnIndication();
     }
     void OnEnable()
@@ -25,16 +23,6 @@ public class TeamController : MonoBehaviour
         DiceScript.DiceRoll -= HandleDiceRoll;
     }
 
-    public void ManagePlayers()
-    {
-        // for (int i = 0; i < Players.Count; i++)
-        // {
-        //     if (Players != null)
-        //     {
-        //         Players[i].SetActive(i < playerCount);
-        //     }
-        // }
-    }
     public void TurnIndication()
     {
         for (int i = 0; i < TeamUI.Length; i++)
