@@ -37,7 +37,7 @@ public class Uimanager : MonoBehaviour
 
     public void SaveAssignedNamesAndLoadNext()
     {
-        string s = "";
+        
         for (int i = 0; i < 4; i++)
         {
            
