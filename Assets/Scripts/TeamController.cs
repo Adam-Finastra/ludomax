@@ -38,12 +38,12 @@ public class TeamController : MonoBehaviour
     {
         MyLogger($" dice rolled : value is  {value}");
         lastRollValue = value;
+        PlayerPrefs.SetInt("DiceRoll", value);
 
         switch (value)
         {
             case 6:
                 teams[teamIndex].HandleSixRoll();
-                PlayerPrefs.SetInt("DiceRoll", value);
                 // Six Roll
                 break;
             default:
@@ -51,7 +51,7 @@ public class TeamController : MonoBehaviour
                 // Normal Roll
                 break;
         }
-
+        // make the endturn func wait for a trigger to change turn.
         EndTurn();
     }
 

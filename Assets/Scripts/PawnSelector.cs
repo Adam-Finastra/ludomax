@@ -4,6 +4,7 @@ using UnityEngine;
 public class PawnSelector : MonoBehaviour
 {
     [SerializeField] List<PlayerScript> playerPawns = new List<PlayerScript>();
+    private List<PlayerScript> movablePawns = new List<PlayerScript>();
 
     void Awake()
     {
@@ -31,11 +32,23 @@ public class PawnSelector : MonoBehaviour
             item.SelectionSwitch(1);
         }
     }
-    public void DisableSelection()
+    public void OnlyEnableMovable()
+    {
+        if (movablePawns.Count > 0)
+        {
+            foreach (PlayerScript item in movablePawns)
+            {
+                item.SelectionSwitch(1);
+            } 
+        }
+    }
+    public void DisableSelection(int movablePawn)
     {
         foreach (PlayerScript item in playerPawns)
         {
             item.SelectionSwitch(0);
-        } 
+        }
+
+        movablePawns.Add(playerPawns[movablePawn]);
     }
 }
