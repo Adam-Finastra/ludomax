@@ -28,6 +28,7 @@ public class TeamScript : MonoBehaviour
     public void HandleNormalRoll()
     {
         MyLogger($" hey normal roll func is working ");
+        pawnSelector.OnlyEnableMovable();
     }
 
     private void MyLogger(string message)

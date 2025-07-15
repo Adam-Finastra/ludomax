@@ -6,7 +6,8 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static Action OnDisableSelection;
+    public static Action<int> OnDisableSelection;
+    [SerializeField] int playerIndex;
     [SerializeField] int playerPosition = 0;
     [SerializeField] int startPosition;
     [SerializeField] float jumpHeight;
@@ -30,7 +31,7 @@ public class PlayerScript : MonoBehaviour
         MyLogger($" value from PlayerPref {targetPosition}");
         StartCoroutine(StartJump(GetIndex()));
 
-        OnDisableSelection?.Invoke();
+        OnDisableSelection?.Invoke(playerIndex);
     }
 
     // Finding Index of the common tile
