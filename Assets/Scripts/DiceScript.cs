@@ -13,8 +13,17 @@ public class DiceScript : MonoBehaviour
 
     private int lastValue;
     private Image[] diceSprites;
+    private Button button;
     public static Action<int> DiceRoll;
-
+    
+    void Awake()
+    {
+        button = GetComponent<Button>();
+    }
+    void OnEnable()
+    {
+        button.enabled = true;
+    }
     void Start()
     {
         diceAnimation.SetActive(false);
@@ -30,6 +39,7 @@ public class DiceScript : MonoBehaviour
     {
         Log($" animation started!");
         StartCoroutine(RollDice());
+        // button.enabled = false;
     }
 
     private IEnumerator RollDice()
@@ -45,6 +55,9 @@ public class DiceScript : MonoBehaviour
             rollValue = UnityEngine.Random.Range(1, 7);
         }
         Log($"dice rolled :{rollValue}");
+
+        if (rollValue != 6) button.enabled = false; 
+
         ShowDice(rollValue - 1);
         DiceRoll?.Invoke(rollValue);
     }

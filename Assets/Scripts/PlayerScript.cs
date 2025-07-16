@@ -1,23 +1,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System;
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static Action<int> OnDisableSelection;
+    public bool inJail = true;
     [SerializeField] int playerIndex;
     [SerializeField] int playerPosition = 0;
     [SerializeField] int startPosition;
     [SerializeField] float jumpHeight;
-    [SerializeField] bool inJail = true;
     [SerializeField] bool isDebug;
+    [SerializeField] private ParticleSystem selectionIndication;
+    private PawnSelector pawnSelector;
     private List<Transform> commonTiles = new List<Transform>();
     private int targetPosition;
     private int steps;
     private bool isSelectable;
 
+    void Awake()
+    {
+        pawnSelector = GetComponentInParent<PawnSelector>();
+    }
     void Start()
     {
         commonTiles = TileManager.Instance.CommonTiles();
@@ -31,12 +35,14 @@ public class PlayerScript : MonoBehaviour
         MyLogger($" value from PlayerPref {targetPosition}");
         StartCoroutine(StartJump(GetIndex()));
 
-        OnDisableSelection?.Invoke(playerIndex);
+        pawnSelector.DisableSelection(playerIndex);
+        selectionIndication.Stop();
     }
 
     // Finding Index of the common tile
     private int GetIndex()
     {
+        Debug.Log($" get index function is running on{this.gameObject.name}");
         if (inJail)
         {
             inJail = false;
@@ -52,6 +58,19 @@ public class PlayerScript : MonoBehaviour
     {
         isSelectable = value > 0 ? true : false;
         MyLogger($" switch clicked and selection is {isSelectable}");
+        TokenUI();
+    }
+
+    private void TokenUI()
+    {
+        if (isSelectable)
+        {
+            selectionIndication.Play();
+        }
+        else
+        {
+            selectionIndication.Stop();
+        }
     }
     // Moving to the target index 
     private IEnumerator StartJump(int Index)
@@ -66,6 +85,9 @@ public class PlayerScript : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         while (playerPosition < Index);
+
+        UIManager.Instance.TurnIndication();
+
     }
 
     public void JumpToPosition(Vector3 targetPos)
