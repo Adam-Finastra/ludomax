@@ -1,24 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TeamController : MonoBehaviour
 {
     [SerializeField] int teamIndex = 0;
     [SerializeField] bool isDebug;
-    private List<TeamScript> teams = new List<TeamScript>();
+    [SerializeField] private List<TeamScript> teams = new List<TeamScript>();
     private int playerCount;
     private int lastRollValue;
 
     void Awake()
     {
-        TeamScript[] allTransforms = transform.GetComponentsInChildren<TeamScript>();
-        foreach (TeamScript item in allTransforms)
-        {
-            if (item != transform)
-            {
-                teams.Add(item);
-            }
-        }
+        teams = GetComponentsInChildren<TeamScript>().ToList();
     }
     void OnEnable()
     {
@@ -26,7 +20,8 @@ public class TeamController : MonoBehaviour
     }
     void Start()
     {
-        UIManager.Instance.TurnIndication(teamIndex);
+        UIManager.Instance.SaveNextTeam(teamIndex);
+        UIManager.Instance.TurnIndication();
         playerCount = transform.childCount;
     }
     void OnDisable()
@@ -39,20 +34,20 @@ public class TeamController : MonoBehaviour
         MyLogger($" dice rolled : value is  {value}");
         lastRollValue = value;
         PlayerPrefs.SetInt("DiceRoll", value);
+        TeamScript team = teams[teamIndex];
+        EndTurn();
 
         switch (value)
         {
             case 6:
-                teams[teamIndex].HandleSixRoll();
+                team.HandleSixRoll();
                 // Six Roll
                 break;
             default:
-                teams[teamIndex].HandleNormalRoll();
+                team.HandleNormalRoll();
                 // Normal Roll
                 break;
         }
-        // make the endturn func wait for a trigger to change turn.
-        EndTurn();
     }
 
     private void EndTurn()
@@ -61,7 +56,7 @@ public class TeamController : MonoBehaviour
         {
             teamIndex = (teamIndex + 1) % playerCount;
         }
-        UIManager.Instance.TurnIndication(teamIndex);
+        UIManager.Instance.SaveNextTeam(teamIndex);
     }
 
     private void MyLogger(string message)

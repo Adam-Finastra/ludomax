@@ -4,6 +4,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] GameObject[] TeamUI;
+
+    private int nextTeamIndex;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -14,13 +16,18 @@ public class UIManager : MonoBehaviour
         Instance = this;
 
     }
-    
-    public void TurnIndication(int index)
+    public void SaveNextTeam(int teamIndex)
+    {
+        nextTeamIndex = teamIndex;
+        Debug.Log($" saved next turn as {nextTeamIndex} ");
+    }
+    public void TurnIndication()
     {
         for (int i = 0; i < TeamUI.Length; i++)
         {
-            TeamUI[i].SetActive(i == index);
+            TeamUI[i].SetActive(i == nextTeamIndex);
         }
+        Debug.Log($" turn changed to {nextTeamIndex} ");
     }
 
 }
