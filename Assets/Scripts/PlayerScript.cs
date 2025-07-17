@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         commonTiles = TileManager.Instance.CommonTiles();
+        playerIndex = int.Parse(this.gameObject.name);
     }
     void OnMouseDown()
     {
@@ -35,7 +36,7 @@ public class PlayerScript : MonoBehaviour
         MyLogger($" value from PlayerPref {targetPosition}");
         StartCoroutine(StartJump(GetIndex()));
 
-        pawnSelector.DisableSelection(playerIndex);
+        pawnSelector.DisableSelection(playerIndex - 1);
         selectionIndication.Stop();
     }
 
