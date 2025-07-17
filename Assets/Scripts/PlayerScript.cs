@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] int playerIndex;
     [SerializeField] int playerPosition = 0;
     [SerializeField] int startPosition;
-    [SerializeField] float jumpHeight;
+    [SerializeField] float jumpHeight = 0.1f;
     [SerializeField] bool isDebug;
     [SerializeField] private ParticleSystem selectionIndication;
     private PawnSelector pawnSelector;
@@ -94,7 +94,7 @@ public class PlayerScript : MonoBehaviour
     public void JumpToPosition(Vector3 targetPos)
     {
         Vector3 startPos = transform.position;
-        Vector3 peakPos = new Vector3(startPos.x + targetPos.x / 2f, Mathf.Max(startPos.y, targetPos.y) + jumpHeight);
+        Vector2 peakPos = new Vector3(startPos.x + targetPos.x / 10f, Mathf.Max(startPos.y, targetPos.y) + jumpHeight);
 
         Sequence jumpSeq = DOTween.Sequence();
 

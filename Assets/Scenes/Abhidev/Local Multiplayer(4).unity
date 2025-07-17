@@ -1315,8 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988a139a5e3ff4bd6875d57b97539a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebugProxy: 1
-  rollValueProxy: 0
+  isDebugProxy: 0
+  rollValueProxy: 6
 --- !u!1 &485552988
 GameObject:
   m_ObjectHideFlags: 0
@@ -21743,7 +21743,7 @@ MonoBehaviour:
   playerIndex: 3
   playerPosition: 26
   startPosition: 26
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 6560337442223410561}
 --- !u!4 &2185862601112106980
@@ -31918,7 +31918,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 39
   startPosition: 39
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 2961597142923530408}
 --- !u!1 &3023616575940159637
@@ -42308,7 +42308,7 @@ MonoBehaviour:
   playerIndex: 2
   playerPosition: 13
   startPosition: 13
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 926881289764275083}
 --- !u!1 &3930739870276537671
@@ -47442,7 +47442,7 @@ MonoBehaviour:
   playerIndex: 1
   playerPosition: 26
   startPosition: 26
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 7278145592515062350}
 --- !u!4 &4291284734945601700
@@ -47642,7 +47642,7 @@ MonoBehaviour:
   playerIndex: 2
   playerPosition: 0
   startPosition: 0
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 0
   selectionIndication: {fileID: 3351120980750251812}
 --- !u!212 &4526027807761500288
@@ -53240,7 +53240,7 @@ MonoBehaviour:
   playerIndex: 3
   playerPosition: 0
   startPosition: 0
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 0
   selectionIndication: {fileID: 7060133593199833557}
 --- !u!4 &5190816348393740203
@@ -58156,7 +58156,7 @@ MonoBehaviour:
   playerIndex: 1
   playerPosition: 13
   startPosition: 13
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 7864681402103838505}
 --- !u!199 &5389750191576300644
@@ -58268,7 +58268,7 @@ MonoBehaviour:
   playerIndex: 1
   playerPosition: 0
   startPosition: 0
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 0
   selectionIndication: {fileID: 5565509187678096033}
 --- !u!1 &5419700643507709300
@@ -58303,7 +58303,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 13
   startPosition: 13
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 5337743000525526042}
 --- !u!114 &5434131236851531011
@@ -58322,7 +58322,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 0
   startPosition: 0
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 0
   selectionIndication: {fileID: 4986863860812701723}
 --- !u!1 &5474579238308085494
@@ -63287,7 +63287,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 39
   startPosition: 39
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 977911004471085782}
 --- !u!1 &5655248424833372706
@@ -63356,7 +63356,7 @@ MonoBehaviour:
   playerIndex: 3
   playerPosition: 26
   startPosition: 26
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 4187090656498031292}
 --- !u!4 &5743490110539863534
@@ -63432,7 +63432,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 26
   startPosition: 26
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 3898032891757683649}
 --- !u!4 &5748990190712211470
@@ -79100,7 +79100,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 39
   startPosition: 39
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 399859140145227682}
 --- !u!1 &7227562788638286002
@@ -84061,7 +84061,7 @@ MonoBehaviour:
   playerIndex: 0
   playerPosition: 39
   startPosition: 39
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 6546333740187846484}
 --- !u!4 &7483552496580840098
@@ -89475,7 +89475,7 @@ MonoBehaviour:
   playerIndex: 3
   playerPosition: 13
   startPosition: 13
-  jumpHeight: 0.2
+  jumpHeight: 0.1
   isDebug: 1
   selectionIndication: {fileID: 2511123627504528190}
 --- !u!4 &8231063910573385502
