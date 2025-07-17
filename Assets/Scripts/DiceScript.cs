@@ -8,9 +8,8 @@ public class DiceScript : MonoBehaviour
     [SerializeField] GameObject diceAnimation;
     [SerializeField] GameObject diceObjects;
     [SerializeField] bool isLog = false;
-    [SerializeField] bool isDebug = true;
-    [SerializeField] int rollValue = 2;
 
+    // public int rollValue;
     private int lastValue;
     private Image[] diceSprites;
     private Button button;
@@ -50,16 +49,16 @@ public class DiceScript : MonoBehaviour
 
         diceAnimation.SetActive(false);
 
-        if (!isDebug)
+        if (!DiceBase.IsDebug)
         {
-            rollValue = UnityEngine.Random.Range(1, 7);
+            DiceBase.rollValue = UnityEngine.Random.Range(1, 7);
         }
-        Log($"dice rolled :{rollValue}");
+        Log($"dice rolled :{DiceBase.rollValue}");
 
-        if (rollValue != 6) button.enabled = false; 
+        if (DiceBase.rollValue != 6) button.enabled = false; 
 
-        ShowDice(rollValue - 1);
-        DiceRoll?.Invoke(rollValue);
+        ShowDice(DiceBase.rollValue - 1);
+        DiceRoll?.Invoke(DiceBase.rollValue);
     }
 
     private void ShowDice(int value)
