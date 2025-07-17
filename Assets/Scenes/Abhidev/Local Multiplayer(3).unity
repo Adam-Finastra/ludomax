@@ -4425,7 +4425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988a139a5e3ff4bd6875d57b97539a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebugProxy: 1
+  isDebugProxy: 0
   rollValueProxy: 0
 --- !u!1 &2121581088
 GameObject:
