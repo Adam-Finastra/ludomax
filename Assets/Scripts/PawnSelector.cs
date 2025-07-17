@@ -7,6 +7,7 @@ public class PawnSelector : MonoBehaviour
     [SerializeField] List<PlayerScript> playerPawns = new List<PlayerScript>();
     [SerializeField] private List<PlayerScript> movablePawns = new List<PlayerScript>();
 
+    private int lastadded = -1;
     void Awake()
     {
         playerPawns = GetComponentsInChildren<PlayerScript>().ToList();
@@ -30,6 +31,10 @@ public class PawnSelector : MonoBehaviour
                 {
                     item.SelectionSwitch(1);
                 }
+                else
+                {
+                    Debug.Log($" yes players in jail ");
+                }
             }
         }
         else
@@ -46,6 +51,10 @@ public class PawnSelector : MonoBehaviour
             item.SelectionSwitch(0);
         }
 
-        movablePawns.Add(playerPawns[movablePawn]);
+        if (lastadded != movablePawn)
+        {
+            movablePawns.Add(playerPawns[movablePawn]);
+            lastadded = movablePawn;
+        }
     }
 }
