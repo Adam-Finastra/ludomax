@@ -12,7 +12,8 @@ public class TeamController : MonoBehaviour
 
     void Awake()
     {
-        teams = GetComponentsInChildren<TeamScript>().ToList();
+        teams = GetComponentsInChildren<TeamScript>().
+                Where(t => t.GetType() == typeof(TeamScript)).ToList();
     }
     void OnEnable()
     {

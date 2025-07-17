@@ -9,10 +9,9 @@ public enum TeamType
 }
 public class TeamScript : MonoBehaviour
 {
-    [SerializeField] TeamType teamType;
-    [SerializeField] int startPosition;
-    [SerializeField] bool isDebug;
-
+    public TeamType teamType;
+    public int startPosition;
+    public bool isDebug;
     private PawnSelector pawnSelector;
 
     void Awake()

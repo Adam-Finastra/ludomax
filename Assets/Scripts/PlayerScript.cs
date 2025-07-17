@@ -3,16 +3,16 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : TeamScript
 {
     public bool inJail = true;
     [SerializeField] int playerIndex;
-    [SerializeField] int playerPosition = 0;
-    [SerializeField] int startPosition;
+    public int playerPosition = 0;
+    // [SerializeField] int startPosition;
     [SerializeField] float jumpHeight = 0.1f;
-    [SerializeField] bool isDebug;
+    // [SerializeField] bool isDebug;
     [SerializeField] private ParticleSystem selectionIndication;
-    private PawnSelector pawnSelector;
+    private PawnSelector _pawnSelector;
     private List<Transform> commonTiles = new List<Transform>();
     private int targetPosition;
     private int steps;
@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
 
     void Awake()
     {
-        pawnSelector = GetComponentInParent<PawnSelector>();
+        _pawnSelector = GetComponentInParent<PawnSelector>();
     }
     void Start()
     {
@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour
         MyLogger($" value from PlayerPref {targetPosition}");
         StartCoroutine(StartJump(GetIndex()));
 
-        pawnSelector.DisableSelection(playerIndex - 1);
+        _pawnSelector.DisableSelection(playerIndex - 1);
         selectionIndication.Stop();
     }
 
@@ -88,7 +88,10 @@ public class PlayerScript : MonoBehaviour
         while (playerPosition < Index);
 
         UIManager.Instance.TurnIndication();
-
+        // Inform tile to check for 
+        Transform tile = commonTiles[playerPosition + Index];
+        TileScript tileScript = tile.GetComponent<TileScript>();
+        tileScript.OnPlayerLands(this);
     }
 
     public void JumpToPosition(Vector3 targetPos)
