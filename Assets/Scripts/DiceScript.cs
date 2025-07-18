@@ -7,7 +7,8 @@ public class DiceScript : MonoBehaviour
 {
     [SerializeField] GameObject diceAnimation;
     [SerializeField] GameObject diceObjects;
-    [SerializeField] bool isLog = false;
+    // [SerializeField] TeamType teamType;
+    [SerializeField] bool isLog = true;
 
     // public int rollValue;
     private int lastValue;
@@ -22,6 +23,11 @@ public class DiceScript : MonoBehaviour
     void OnEnable()
     {
         button.enabled = true;
+        TileScript.OnCancel += ChangeButton;
+    }
+    void OnDisable()
+    {
+        TileScript.OnCancel += ChangeButton;
     }
     void Start()
     {
@@ -60,7 +66,12 @@ public class DiceScript : MonoBehaviour
         ShowDice(DiceBase.rollValue - 1);
         DiceRoll?.Invoke(DiceBase.rollValue);
     }
-
+    //
+    public void ChangeButton()
+    {
+        // Log($" a pawn in request to change the button");
+        button.enabled = true;
+    }
     private void ShowDice(int value)
     {
         for (int i = 0; i < diceSprites.Length; i++)

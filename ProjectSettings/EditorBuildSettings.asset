@@ -18,6 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Abhidev/Local Multiplayer(4).unity
     guid: 87482758a3164448cb83b41c60b43f4b
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: f4f922c7440d74e87b7eb19d3572d81a, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2831ebb00c2394987bcb95b0138138ec, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a8ab822449ea9420fba24d78ec9bcd8d, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

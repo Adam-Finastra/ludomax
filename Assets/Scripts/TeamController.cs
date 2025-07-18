@@ -14,7 +14,10 @@ public class TeamController : MonoBehaviour
     {
         teams = GetComponentsInChildren<TeamScript>().
                 Where(t => t.GetType() == typeof(TeamScript)).ToList();
-    }
+
+        playerCount = transform.childCount;
+        PlayerPrefs.SetInt("TeamCount", playerCount);
+        PlayerPrefs.Save();    }
     void OnEnable()
     {
         DiceScript.DiceRoll += HandleDiceRoll;
@@ -23,7 +26,7 @@ public class TeamController : MonoBehaviour
     {
         UIManager.Instance.SaveNextTeam(teamIndex);
         UIManager.Instance.TurnIndication();
-        playerCount = transform.childCount;
+
     }
     void OnDisable()
     {
@@ -50,7 +53,11 @@ public class TeamController : MonoBehaviour
                 break;
         }
     }
-
+    public void GiveChance()
+    {
+        teamIndex -= 1;
+        UIManager.Instance.SaveNextTeam(teamIndex);
+    }
     private void EndTurn()
     {
         if (lastRollValue != 6)

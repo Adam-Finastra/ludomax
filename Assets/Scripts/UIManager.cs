@@ -4,6 +4,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] GameObject[] TeamUI;
+    [SerializeField] bool isDebug;
 
     private int nextTeamIndex;
     void Awake()
@@ -19,7 +20,7 @@ public class UIManager : MonoBehaviour
     public void SaveNextTeam(int teamIndex)
     {
         nextTeamIndex = teamIndex;
-        Debug.Log($" saved next turn as {nextTeamIndex} ");
+        MyLogger($" saved next turn as {nextTeamIndex} ");
     }
     public void TurnIndication()
     {
@@ -27,7 +28,11 @@ public class UIManager : MonoBehaviour
         {
             TeamUI[i].SetActive(i == nextTeamIndex);
         }
-        Debug.Log($" turn changed to {nextTeamIndex} ");
+        MyLogger($" turn changed to {nextTeamIndex} ");
     }
 
+    private void MyLogger(string message)
+    {
+        if (isDebug) Debug.Log(message);
+    }
 }

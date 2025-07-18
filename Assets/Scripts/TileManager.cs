@@ -37,6 +37,10 @@ public class TileManager : MonoBehaviour
     {
         return commonTiles;
     }
+    public int CommonTilesCount()
+    {
+        return commonTiles.Count;
+    }
     public List<Transform> BlueTiles()
     {
         return blueTiles;

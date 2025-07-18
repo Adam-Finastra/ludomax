@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class PawnSelector : MonoBehaviour
 {
-    [SerializeField] List<PlayerScript> playerPawns = new List<PlayerScript>();
-    [SerializeField] private List<PlayerScript> movablePawns = new List<PlayerScript>();
+    private TeamScript team;
+    [SerializeField] bool isDebug;
 
     private int lastadded = -1;
+
     void Awake()
     {
-        playerPawns = GetComponentsInChildren<PlayerScript>().ToList();
+        team = GetComponent<TeamScript>();
     }
 
     public void EnableSelection()
     {
-        foreach (PlayerScript item in playerPawns)
+        foreach (PlayerScript item in team.playerPawns)
         {
             item.SelectionSwitch(1);
         }
     }
+
     public void OnlyEnableMovable()
     {
-        if (movablePawns.Count > 0)
+        if (team.movablePawns.Count > 0)
         {
-            Debug.Log($" movable token is not zero, rather count is {movablePawns.Count}");
-            foreach (PlayerScript item in movablePawns)
+            MyLogger($"Movable token count: {team.movablePawns.Count}");
+            foreach (PlayerScript item in team.movablePawns)
             {
                 if (!item.inJail)
                 {
@@ -33,28 +35,33 @@ public class PawnSelector : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log($" yes players in jail ");
+                    MyLogger("Player is in jail.");
                 }
             }
         }
         else
         {
-            Debug.Log($" movable token count is {movablePawns.Count}");
-            // UIManager.Instance.SaveNextTeam()
+            MyLogger("No movable tokens.");
             UIManager.Instance.TurnIndication();
         }
     }
+
     public void DisableSelection(int movablePawn)
     {
-        foreach (PlayerScript item in playerPawns)
+        foreach (PlayerScript item in team.playerPawns)
         {
             item.SelectionSwitch(0);
         }
 
         if (lastadded != movablePawn)
         {
-            movablePawns.Add(playerPawns[movablePawn]);
+            team.movablePawns.Add(team.playerPawns[movablePawn]);
             lastadded = movablePawn;
         }
+    }
+
+    private void MyLogger(string message)
+    {
+        if (isDebug) Debug.Log(message);
     }
 }

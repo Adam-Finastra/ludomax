@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class TileScript : MonoBehaviour
 {
     [SerializeField] private bool isLog;
     private List<PlayerScript> allpawns = new List<PlayerScript>();
+    public static Action OnCancel;
     public enum TileType
     {
         Normal,
@@ -46,12 +48,12 @@ public class TileScript : MonoBehaviour
         {
             foreach (var item in toCancel)
             {
-                // CancelPawn(item);
+                CancelPawn(item);
             }
         }
         else
         {
-          UIManager.Instance.TurnIndication(); 
+          UIManager.Instance.TurnIndication();  
         }
     }
     private void HandleSafeZone(PlayerScript player)
@@ -59,21 +61,23 @@ public class TileScript : MonoBehaviour
         Log($" Reached safe zone");
         UIManager.Instance.TurnIndication();
     }
-    // private void CancelPawn(PlayerScript pawn)
-    // {
-    //     pawn.inJail = true;
-    //     pawn.playerPosition = -1;
-    //     pawn.transform.position = pawn.startPoint.position;
-    //     allpawns.Remove(pawn);
+    private void CancelPawn(PlayerScript pawn)
+    {
+        pawn.inJail = true;
+        pawn.playerPosition = -1;
+        pawn.transform.position = pawn.startPos.position;
+        allpawns.Remove(pawn);
 
-    //     TeamScript team = pawn.GetComponentInParent<TeamScript>();
-    //     team.moveablePawns.Remove(pawn);
-    //     team.pawns.Add(pawn);
-    //     // PlayerController playerController = pawn.GetComponentInParent<PlayerController>();
-    //     // playerController.GiveChance();
-    //     UIManager.Instance.GiveChance();
-    //     Log($"{pawn.name} was cancelled!");
-    // }
+        TeamScript team = pawn.GetComponentInParent<TeamScript>();
+        team.movablePawns.Remove(pawn); // removes chanced player from movable list
+        // team.playerPawns.Add(pawn);
+
+        TeamController teamController = team.GetComponentInParent<TeamController>();
+        teamController.GiveChance(); // rewards a chance after cancelling
+        UIManager.Instance.TurnIndication(); // showing UI indication
+        OnCancel.Invoke();
+        Log($"{pawn.name} was cancelled!");
+    }
 
     private void Log(string message)
     {
