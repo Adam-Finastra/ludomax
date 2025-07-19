@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerScript playerScript;
     private TeamScript teamScript;
 
-    private int targetSteps;
+    public int targetSteps;
 
     void Awake()
     {
@@ -35,13 +35,17 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator StartJump()
     {
+        if (playerScript.inhomePath && targetSteps > 56)
+            yield break;
+            
         while (playerScript.steps < targetSteps)
         {
             playerScript.steps++;
 
-            if (playerScript.steps == 50)
+            if (playerScript.steps == 51)
             {
                 playerScript.playerPosition = 0;
+                playerScript.inhomePath = true;
             }
 
             Vector3 nextJump = NextJump();
@@ -68,30 +72,30 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 NextJump()
     {
-        if (playerScript.steps >= 50)
+        if (playerScript.steps <= 50)
+        {
+            playerScript.playerPosition = (playerScript.playerPosition + 1) % tileCount;
+            return commonTiles[playerScript.playerPosition].position;
+        }
+        else
         {
             List<Transform> homeTiles = teamScript.TurnTile();
             Vector3 nextJump = homeTiles[playerScript.playerPosition].position;
             playerScript.playerPosition++;
             return nextJump;
         }
-        else
-        {
-            playerScript.playerPosition = (playerScript.playerPosition + 1) % tileCount;
-            return commonTiles[playerScript.playerPosition].position;
-        }
     }
 
     private Transform GetCurrentTile()
     {
-        if (playerScript.steps >= 50)
+        if (playerScript.steps <= 50)
         {
-            List<Transform> homeTiles = teamScript.TurnTile();
-            return homeTiles[Mathf.Clamp(playerScript.playerPosition - 1, 0, homeTiles.Count - 1)];
+            return commonTiles[playerScript.playerPosition];
         }
         else
         {
-            return commonTiles[playerScript.playerPosition];
+            List<Transform> homeTiles = teamScript.TurnTile();
+            return homeTiles[Mathf.Clamp(playerScript.playerPosition - 1, 0, homeTiles.Count - 1)];
         }
     }
 

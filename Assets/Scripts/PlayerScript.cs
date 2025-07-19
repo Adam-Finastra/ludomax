@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public bool inJail = true;
+    public bool inhomePath;
     public Transform startPos;
     [SerializeField] int playerIndex;
     public TeamType teamType;
@@ -44,7 +45,6 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            // StartCoroutine(StartJump(GetIndex()));
             playerMovement.IntialJumpLoop(this,targetPosition);
         }
 

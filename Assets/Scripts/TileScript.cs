@@ -10,14 +10,15 @@ public class TileScript : MonoBehaviour
     public enum TileType
     {
         Normal,
-        SafeZone
+        SafeZone,
+        FinishLine
     }
     public TileType tileType;
 
     public void OnPlayerLands(PlayerScript arrivingPlayer)
     {
         Log($"{arrivingPlayer.name} of {arrivingPlayer.teamType} arrived on {this.name}");
-        
+
         switch (tileType)
         {
             case TileType.Normal:
@@ -25,6 +26,9 @@ public class TileScript : MonoBehaviour
                 break;
             case TileType.SafeZone:
                 HandleSafeZone(arrivingPlayer);
+                break;
+            case TileType.FinishLine:
+                HandleWin(arrivingPlayer);
                 break;
         }
     }
@@ -56,6 +60,11 @@ public class TileScript : MonoBehaviour
           UIManager.Instance.TurnIndication();  
         }
     }
+    private void HandleWin(PlayerScript player)
+    {
+        Log($" {player.name} reached finish line");
+        RemovePlayerFromGame(player);
+    }
     private void HandleSafeZone(PlayerScript player)
     {
         Log($" Reached safe zone");
@@ -68,17 +77,21 @@ public class TileScript : MonoBehaviour
         pawn.transform.position = pawn.startPos.position;
         allpawns.Remove(pawn);
 
-        TeamScript team = pawn.GetComponentInParent<TeamScript>();
-        team.movablePawns.Remove(pawn); // removes chanced player from movable list
+        RemovePlayerFromGame(pawn);
+
+        Log($"{pawn.name} was cancelled!");
+    }
+    private void RemovePlayerFromGame(PlayerScript player)
+    {
+        TeamScript team = player.GetComponentInParent<TeamScript>();
+        team.movablePawns.Remove(player); // removes chanced player from movable list
         // team.playerPawns.Add(pawn);
         OnCancel?.Invoke();
 
         TeamController teamController = team.GetComponentInParent<TeamController>();
         teamController.GiveChance(); // rewards a chance after cancelling
-        UIManager.Instance.TurnIndication(); // showing UI indication
-        Log($"{pawn.name} was cancelled!");
+        UIManager.Instance.TurnIndication();  // showing UI indication
     }
-
     private void Log(string message)
     {
         if (isLog)
