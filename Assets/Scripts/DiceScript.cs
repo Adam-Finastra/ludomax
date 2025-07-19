@@ -50,7 +50,7 @@ public class DiceScript : MonoBehaviour
     private IEnumerator RollDice()
     {
         diceAnimation.SetActive(true);
-        sfx.sfxinstance.dicesfx();
+        // sfx.sfxinstance.dicesfx();
 
         yield return new WaitForSeconds(1f);
 
