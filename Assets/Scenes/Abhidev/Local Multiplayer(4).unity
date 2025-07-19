@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 687448039}
   diceObjects: {fileID: 1374706809}
-  isLog: 0
+  isLog: 1
 --- !u!1 &958367691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,7 +3405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 2005352584}
   diceObjects: {fileID: 64057712}
-  isLog: 0
+  isLog: 1
 --- !u!1 &1357988776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,7 +3942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 1140686767}
   diceObjects: {fileID: 839429787}
-  isLog: 0
+  isLog: 1
 --- !u!114 &1520841007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11374,6 +11374,7 @@ MonoBehaviour:
   isDebug: 1
   playerPawns: []
   movablePawns: []
+  teamTile: []
 --- !u!198 &926881289764275083
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -21268,6 +21269,7 @@ GameObject:
   - component: {fileID: 5596748541935078866}
   - component: {fileID: 5746311053438459972}
   - component: {fileID: 2045667773660186264}
+  - component: {fileID: 5746311053438459973}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -21421,6 +21423,7 @@ GameObject:
   - component: {fileID: 6063222023365323086}
   - component: {fileID: 7470630061493313673}
   - component: {fileID: 9021943608828284163}
+  - component: {fileID: 9021943608828284164}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -21552,6 +21555,7 @@ GameObject:
   - component: {fileID: 3265340081749766276}
   - component: {fileID: 2175175594891557049}
   - component: {fileID: 4828750041307176955}
+  - component: {fileID: 4828750041307176956}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -21804,8 +21808,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 26
-  jumpHeight: 0.1
   selectionIndication: {fileID: 6560337442223410561}
+  steps: 0
   isSelectable: 0
 --- !u!4 &2185862601112106980
 Transform:
@@ -22111,6 +22115,7 @@ GameObject:
   - component: {fileID: 6703190331954416898}
   - component: {fileID: 5168552757885786033}
   - component: {fileID: 3459543800122961285}
+  - component: {fileID: 6703190331954416899}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -22135,6 +22140,7 @@ MonoBehaviour:
   isDebug: 0
   playerPawns: []
   movablePawns: []
+  teamTile: []
 --- !u!198 &2511123627504528190
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -27002,6 +27008,7 @@ GameObject:
   - component: {fileID: 4887640681834606146}
   - component: {fileID: 4498417702469070850}
   - component: {fileID: 5744819425812294404}
+  - component: {fileID: 8377464037730939600}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -32012,11 +32019,11 @@ MonoBehaviour:
   startPos: {fileID: 6575382221708278416}
   playerIndex: 0
   teamType: 3
-  startIndex: 0
+  startIndex: 39
   isDebug: 1
   playerPosition: 39
-  jumpHeight: 0.1
   selectionIndication: {fileID: 2961597142923530408}
+  steps: 0
   isSelectable: 0
 --- !u!1 &3023616575940159637
 GameObject:
@@ -42481,10 +42488,10 @@ MonoBehaviour:
   playerIndex: 2
   teamType: 1
   startIndex: 13
-  isDebug: 0
+  isDebug: 1
   playerPosition: 13
-  jumpHeight: 0.1
   selectionIndication: {fileID: 926881289764275083}
+  steps: 0
   isSelectable: 0
 --- !u!1 &3930739870276537671
 GameObject:
@@ -42612,6 +42619,7 @@ GameObject:
   - component: {fileID: 3601063559843313361}
   - component: {fileID: 2997100677339116601}
   - component: {fileID: 607049767919326773}
+  - component: {fileID: 8409283583677183323}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -47636,8 +47644,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 26
-  jumpHeight: 0.1
   selectionIndication: {fileID: 7278145592515062350}
+  steps: 0
   isSelectable: 0
 --- !u!4 &4291284734945601700
 Transform:
@@ -47855,8 +47863,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 0
-  jumpHeight: 0.1
   selectionIndication: {fileID: 3351120980750251812}
+  steps: 0
   isSelectable: 0
 --- !u!212 &4526027807761500288
 SpriteRenderer:
@@ -48029,6 +48037,7 @@ GameObject:
   - component: {fileID: 2312706479103884704}
   - component: {fileID: 3922060700338605613}
   - component: {fileID: 1563587981170896972}
+  - component: {fileID: 4677599234485068903}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -48036,6 +48045,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4677599234485068903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4677599234485068902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &4685011022970039055
 Transform:
   m_ObjectHideFlags: 0
@@ -48284,6 +48307,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
   m_Radius: 0.49999997
+--- !u!114 &4828750041307176956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790176407866523805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!212 &4887640681834606146
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53471,6 +53508,7 @@ GameObject:
   - component: {fileID: 7029519564961651699}
   - component: {fileID: 4275053369741132239}
   - component: {fileID: 998979544010754634}
+  - component: {fileID: 7029519564961651700}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -53542,8 +53580,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 0
-  jumpHeight: 0.1
   selectionIndication: {fileID: 7060133593199833557}
+  steps: 0
   isSelectable: 0
 --- !u!4 &5190816348393740203
 Transform:
@@ -53573,6 +53611,7 @@ GameObject:
   - component: {fileID: 5094928902704215663}
   - component: {fileID: 5638824186290081245}
   - component: {fileID: 7465235322326993840}
+  - component: {fileID: 7465235322326993841}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -58436,6 +58475,7 @@ GameObject:
   - component: {fileID: 7567464992720871673}
   - component: {fileID: 7193465413816044434}
   - component: {fileID: 2231125558789703499}
+  - component: {fileID: 8914473182447295690}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -58460,10 +58500,10 @@ MonoBehaviour:
   playerIndex: 1
   teamType: 1
   startIndex: 13
-  isDebug: 0
+  isDebug: 1
   playerPosition: 13
-  jumpHeight: 0.1
   selectionIndication: {fileID: 7864681402103838505}
+  steps: 0
   isSelectable: 0
 --- !u!199 &5389750191576300644
 ParticleSystemRenderer:
@@ -58577,8 +58617,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 0
-  jumpHeight: 0.1
   selectionIndication: {fileID: 5565509187678096033}
+  steps: 0
   isSelectable: 0
 --- !u!1 &5419700643507709300
 GameObject:
@@ -58613,10 +58653,10 @@ MonoBehaviour:
   playerIndex: 0
   teamType: 1
   startIndex: 13
-  isDebug: 0
+  isDebug: 1
   playerPosition: 13
-  jumpHeight: 0.1
   selectionIndication: {fileID: 5337743000525526042}
+  steps: 0
   isSelectable: 0
 --- !u!114 &5434131236851531011
 MonoBehaviour:
@@ -58637,8 +58677,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 0
-  jumpHeight: 0.1
   selectionIndication: {fileID: 4986863860812701723}
+  steps: 0
   isSelectable: 0
 --- !u!1 &5474579238308085494
 GameObject:
@@ -63603,11 +63643,11 @@ MonoBehaviour:
   startPos: {fileID: 4273692372672454036}
   playerIndex: 0
   teamType: 3
-  startIndex: 0
+  startIndex: 39
   isDebug: 1
   playerPosition: 39
-  jumpHeight: 0.1
   selectionIndication: {fileID: 977911004471085782}
+  steps: 0
   isSelectable: 0
 --- !u!1 &5655248424833372706
 GameObject:
@@ -63621,6 +63661,7 @@ GameObject:
   - component: {fileID: 4446213274496270247}
   - component: {fileID: 5415415663448220846}
   - component: {fileID: 3913895915663738280}
+  - component: {fileID: 7639134444063886026}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -63693,8 +63734,8 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 26
-  jumpHeight: 0.1
   selectionIndication: {fileID: 4187090656498031292}
+  steps: 0
   isSelectable: 0
 --- !u!4 &5743490110539863534
 Transform:
@@ -63772,9 +63813,23 @@ MonoBehaviour:
   startIndex: 0
   isDebug: 1
   playerPosition: 26
-  jumpHeight: 0.1
   selectionIndication: {fileID: 3898032891757683649}
+  steps: 0
   isSelectable: 0
+--- !u!114 &5746311053438459973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488759266494233924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &5748990190712211470
 Transform:
   m_ObjectHideFlags: 0
@@ -63899,6 +63954,7 @@ MonoBehaviour:
   isDebug: 0
   playerPawns: []
   movablePawns: []
+  teamTile: []
 --- !u!1 &6028442813484475086
 GameObject:
   m_ObjectHideFlags: 0
@@ -63927,6 +63983,7 @@ GameObject:
   - component: {fileID: 4526027807761500288}
   - component: {fileID: 5382631320224337644}
   - component: {fileID: 3191779867997469307}
+  - component: {fileID: 6050361363487348619}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -63934,6 +63991,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6050361363487348619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050361363487348618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!212 &6063222023365323086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74358,6 +74429,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6703190331954416899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453884439427317003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &6730447407134670535
 Transform:
   m_ObjectHideFlags: 0
@@ -74493,6 +74578,7 @@ GameObject:
   - component: {fileID: 6877309419950989858}
   - component: {fileID: 5425058623962814436}
   - component: {fileID: 2906023262559400195}
+  - component: {fileID: 6877309419950989859}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -74584,6 +74670,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6877309419950989859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791075899048264012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!1 &7021511246058458824
 GameObject:
   m_ObjectHideFlags: 0
@@ -74655,6 +74755,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7029519564961651700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104802683860761761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!198 &7060133593199833557
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -79632,11 +79746,11 @@ MonoBehaviour:
   startPos: {fileID: 4358161201351565989}
   playerIndex: 0
   teamType: 3
-  startIndex: 0
+  startIndex: 39
   isDebug: 1
   playerPosition: 39
-  jumpHeight: 0.1
   selectionIndication: {fileID: 399859140145227682}
+  steps: 0
   isSelectable: 0
 --- !u!1 &7227562788638286002
 GameObject:
@@ -79666,6 +79780,7 @@ GameObject:
   - component: {fileID: 553723111137658598}
   - component: {fileID: 8182563447542966675}
   - component: {fileID: 9015183240928540748}
+  - component: {fileID: 9015183240928540749}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -84609,6 +84724,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
   m_Radius: 0.49999997
+--- !u!114 &7465235322326993841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234193241885735404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!114 &7470630061493313673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84625,11 +84754,11 @@ MonoBehaviour:
   startPos: {fileID: 2534437748666284773}
   playerIndex: 0
   teamType: 3
-  startIndex: 0
+  startIndex: 39
   isDebug: 1
   playerPosition: 39
-  jumpHeight: 0.1
   selectionIndication: {fileID: 6546333740187846484}
+  steps: 0
   isSelectable: 0
 --- !u!4 &7483552496580840098
 Transform:
@@ -84825,6 +84954,20 @@ Transform:
   - {fileID: 4188543268836049519}
   m_Father: {fileID: 9001137451724351632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7639134444063886026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655248424833372706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!1 &7680388431633791204
 GameObject:
   m_ObjectHideFlags: 0
@@ -90162,10 +90305,10 @@ MonoBehaviour:
   playerIndex: 3
   teamType: 1
   startIndex: 13
-  isDebug: 0
+  isDebug: 1
   playerPosition: 13
-  jumpHeight: 0.1
   selectionIndication: {fileID: 2511123627504528190}
+  steps: 0
   isSelectable: 0
 --- !u!4 &8231063910573385502
 Transform:
@@ -90318,6 +90461,20 @@ Transform:
   - {fileID: 6457469387066605546}
   m_Father: {fileID: 9001137451724351632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8377464037730939600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745340846687712181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &8388368191867651997
 Transform:
   m_ObjectHideFlags: 0
@@ -90349,6 +90506,20 @@ Transform:
   - {fileID: 6775010460022249574}
   m_Father: {fileID: 956470975591550952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8409283583677183323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078165563559614033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!1 &8497064195604533937
 GameObject:
   m_ObjectHideFlags: 0
@@ -90383,6 +90554,7 @@ MonoBehaviour:
   isDebug: 0
   playerPawns: []
   movablePawns: []
+  teamTile: []
 --- !u!1 &8529735583867637547
 GameObject:
   m_ObjectHideFlags: 0
@@ -90650,6 +90822,7 @@ GameObject:
   - component: {fileID: 6540375588225738704}
   - component: {fileID: 5434131236851531011}
   - component: {fileID: 5805796660022714739}
+  - component: {fileID: 8812601546459515874}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -90657,6 +90830,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8812601546459515874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8812601546459515873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &8813501960998539163
 Transform:
   m_ObjectHideFlags: 0
@@ -90748,6 +90935,7 @@ GameObject:
   - component: {fileID: 3311887651866826407}
   - component: {fileID: 5706917274036404396}
   - component: {fileID: 1511924769944523612}
+  - component: {fileID: 8876112928352477081}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -90755,6 +90943,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8876112928352477081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876112928352477080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &8914473182447295689
 Transform:
   m_ObjectHideFlags: 0
@@ -90771,6 +90973,20 @@ Transform:
   - {fileID: 8255253370716483436}
   m_Father: {fileID: 956470975591550952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8914473182447295690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372717617520199946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!4 &8917383896785570629
 Transform:
   m_ObjectHideFlags: 0
@@ -90887,6 +91103,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
   m_Radius: 0.49999997
+--- !u!114 &9015183240928540749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264221030113192373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!58 &9021943608828284163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -90923,6 +91153,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
   m_Radius: 0.49999997
+--- !u!114 &9021943608828284164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619406580886451578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
 --- !u!1 &9032421129412669407
 GameObject:
   m_ObjectHideFlags: 0
