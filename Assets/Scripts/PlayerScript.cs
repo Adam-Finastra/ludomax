@@ -45,18 +45,13 @@ public class PlayerScript : MonoBehaviour
         else
         {
             // StartCoroutine(StartJump(GetIndex()));
-            playerMovement.IntialJumpLoop(this, GetIndex());
+            playerMovement.IntialJumpLoop(this,targetPosition);
         }
 
         _pawnSelector.DisableSelection(playerIndex - 1);
         selectionIndication.Stop();
     }
 
-    // Finding Index of the common tile
-    private int GetIndex()
-    {
-        return (steps + targetPosition) % commonTiles.Count;
-    }
     // Turn selection bool off and on
     public void SelectionSwitch(int value)
     {
