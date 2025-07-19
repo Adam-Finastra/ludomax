@@ -71,11 +71,11 @@ public class TileScript : MonoBehaviour
         TeamScript team = pawn.GetComponentInParent<TeamScript>();
         team.movablePawns.Remove(pawn); // removes chanced player from movable list
         // team.playerPawns.Add(pawn);
+        OnCancel?.Invoke();
 
         TeamController teamController = team.GetComponentInParent<TeamController>();
         teamController.GiveChance(); // rewards a chance after cancelling
         UIManager.Instance.TurnIndication(); // showing UI indication
-        OnCancel.Invoke();
         Log($"{pawn.name} was cancelled!");
     }
 

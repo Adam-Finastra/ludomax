@@ -27,7 +27,7 @@ public class DiceScript : MonoBehaviour
     }
     void OnDisable()
     {
-        TileScript.OnCancel += ChangeButton;
+        TileScript.OnCancel -= ChangeButton;
     }
     void Start()
     {
@@ -70,7 +70,7 @@ public class DiceScript : MonoBehaviour
     //
     public void ChangeButton()
     {
-        // Log($" a pawn in request to change the button");
+        Log($" a pawn in request to change the button");
         button.enabled = true;
     }
     private void ShowDice(int value)

@@ -9,6 +9,7 @@ public class TeamController : MonoBehaviour
     [SerializeField] private List<TeamScript> teams = new List<TeamScript>();
     private int playerCount;
     private int lastRollValue;
+    private int lastTeamIndex;
 
     void Awake()
     {
@@ -55,11 +56,12 @@ public class TeamController : MonoBehaviour
     }
     public void GiveChance()
     {
-        teamIndex -= 1;
+        teamIndex = lastTeamIndex;
         UIManager.Instance.SaveNextTeam(teamIndex);
     }
     private void EndTurn()
     {
+        lastTeamIndex = teamIndex;
         if (lastRollValue != 6)
         {
             teamIndex = (teamIndex + 1) % playerCount;
