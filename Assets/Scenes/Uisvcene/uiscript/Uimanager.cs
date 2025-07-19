@@ -12,13 +12,14 @@ public class Uimanager : MonoBehaviour
 
     [Header("Default Player Names")]
     [SerializeField] private TMP_InputField [] playername ;
-    
+    [SerializeField]
+    private string[] playernamesarray = new string[4];
 
     [Header("Settings")]
     
 
     private bool panelOn = true;
-    [SerializeField]private string[] n = new string[4];
+    bool hasname = false;
    
 
     private void Start()
@@ -40,22 +41,38 @@ public class Uimanager : MonoBehaviour
         
         for (int i = 0; i < 4; i++)
         {
+            if (playername[i].text != null && !hasname)
+            {
+                PlayerPrefs.SetString("player" + i, playername[i].text);
+                PlayerPrefs.Save();
+            
+            }
+            else
+            {
+                Debug.Log($"player is empty now");
+            }
            
-            PlayerPrefs.SetString("player" + i, playername[i].text);
-            PlayerPrefs.Save();
-        
+               
         }
-     
-        
-       
-
-        Debug.Log("Saved assigned names to PlayerPrefs.");
-       LoadNextScene();
+        LoadNextScene();
     }
 
     private void LoadNextScene()
     {
-       SceneManager.LoadScene(PlayerPrefs.GetInt("Index",0));
+        Debug.Log("the next scene is loaded");
+        if(PlayerPrefs.GetString("player","") != null)
+        {
+
+            Debug.Log(PlayerPrefs.GetString("player", "") + "playernameisempty");
+            SceneManager.LoadScene(PlayerPrefs.GetInt("Index", 0));
+        }
+        else
+        {
+            Debug.Log($"the input area is null{PlayerPrefs.GetString("player","")} ");
+            return;
+            
+        }
+      
     }
 
     public void ToggleSelectionPanel()

@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 774554094}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Popup, Assembly-CSharp
         m_MethodName: hidepopup
         m_Mode: 1
@@ -415,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774554095}
-  - component: {fileID: 774554094}
+  - component: {fileID: 774554096}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -423,20 +423,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &774554094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774554093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c259a30e3d21dbe4e8a76157f302e50e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popuppanel: {fileID: 859540063}
-  confettiee: {fileID: 0}
 --- !u!4 &774554095
 Transform:
   m_ObjectHideFlags: 0
@@ -452,6 +438,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774554096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774554093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9e17fc83fe386438e57aedf55e0e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &852796549
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,14 +805,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 774554094}
-        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
-        m_MethodName: showpopup
-        m_Mode: 1
+      - m_Target: {fileID: 774554096}
+        m_TargetAssemblyTypeName: randomdice, Assembly-CSharp
+        m_MethodName: startroll
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
