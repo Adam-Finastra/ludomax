@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,9 @@ public class DiceScript : MonoBehaviour
 {
     [SerializeField] GameObject diceAnimation;
     [SerializeField] GameObject diceObjects;
-    // [SerializeField] TeamType teamType;
-    [SerializeField] bool isLog = true;
-
-    // public int rollValue;
+    [SerializeField] bool isDebug = true;
+    private List<int> weightList = new List<int>();
+    private int rolledTimes = 0;
     private int lastValue;
     private Image[] diceSprites;
     private Button button;
@@ -23,11 +23,11 @@ public class DiceScript : MonoBehaviour
     void OnEnable()
     {
         button.enabled = true;
-        TileScript.OnCancel += ChangeButton;
+        GameEvent.EnableButton += ChangeButton;
     }
     void OnDisable()
     {
-        TileScript.OnCancel -= ChangeButton;
+        GameEvent.EnableButton -= ChangeButton;
     }
     void Start()
     {
@@ -56,21 +56,45 @@ public class DiceScript : MonoBehaviour
 
         diceAnimation.SetActive(false);
 
-        if (!DiceBase.IsDebug)
+        if (!DiceBase.IsDebug && rolledTimes <= 3)
         {
             DiceBase.rollValue = UnityEngine.Random.Range(1, 7);
+            lastValue = DiceBase.rollValue;
+            if (lastValue != 6)
+            {
+                rolledTimes++;
+            }
         }
-        Log($"dice rolled :{DiceBase.rollValue}");
+        else if (rolledTimes > 3)
+        {
+            DiceBase.rollValue = StartRoll(4);
+        }
 
-        if (DiceBase.rollValue != 6) button.enabled = false; 
-
+        button.enabled = false;
         ShowDice(DiceBase.rollValue - 1);
         DiceRoll?.Invoke(DiceBase.rollValue);
+        Log($"dice rolled :{DiceBase.rollValue} & probablity tracker is {rolledTimes}");
     }
-    //
+    private int StartRoll(int indexss = 0)
+    {
+        int[] weight = { 1, 1, 1, 1, 1, indexss };
+        weightList.Clear();
+        for (int i = 0; i < weight.Length; i++)
+        {
+            for (int j = 0; j < weight[i]; j++)
+            {
+                weightList.Add(i + 1);
+            }
+        }
+        int randointex = UnityEngine.Random.Range(0, weightList.Count);
+        int rollednumber = weightList[randointex];
+        // Debug.Log(rollednumber);
+        return rollednumber;
+    }
     public void ChangeButton()
     {
         Log($" a pawn in request to change the button");
+        // button.enabled = button.enabled == true ? false : true;
         button.enabled = true;
     }
     private void ShowDice(int value)
@@ -82,7 +106,7 @@ public class DiceScript : MonoBehaviour
     }
     private void Log(string message)
     {
-        if (isLog)
+        if (isDebug)
         {
             Debug.Log(message);
         }

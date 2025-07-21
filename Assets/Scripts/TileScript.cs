@@ -6,7 +6,7 @@ public class TileScript : MonoBehaviour
 {
     [SerializeField] private bool isLog;
     private List<PlayerScript> allpawns = new List<PlayerScript>();
-    public static Action OnCancel;
+    // public static Action OnCancel;
     public enum TileType
     {
         Normal,
@@ -57,7 +57,8 @@ public class TileScript : MonoBehaviour
         }
         else
         {
-          UIManager.Instance.TurnIndication();  
+            UIManager.Instance.TurnIndication();
+            GameEvent.EnableButton?.Invoke();
         }
     }
     private void HandleWin(PlayerScript player)
@@ -69,6 +70,7 @@ public class TileScript : MonoBehaviour
     {
         Log($" Reached safe zone");
         UIManager.Instance.TurnIndication();
+        GameEvent.EnableButton?.Invoke();
     }
     private void CancelPawn(PlayerScript pawn)
     {
@@ -85,8 +87,9 @@ public class TileScript : MonoBehaviour
     {
         TeamScript team = player.GetComponentInParent<TeamScript>();
         team.movablePawns.Remove(player); // removes chanced player from movable list
-        // team.playerPawns.Add(pawn);
-        OnCancel?.Invoke();
+                                          // team.playerPawns.Add(pawn);
+                                          // OnCancel?.Invoke();
+        GameEvent.EnableButton?.Invoke();
 
         TeamController teamController = team.GetComponentInParent<TeamController>();
         teamController.GiveChance(); // rewards a chance after cancelling

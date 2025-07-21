@@ -7,13 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] bool isDebug;
     [SerializeField] float jumpHeight = 0.1f;
+    [SerializeField] float jumpSpeed;
 
     private int tileCount;
     private List<Transform> commonTiles = new List<Transform>();
     private PlayerScript playerScript;
     private TeamScript teamScript;
 
-    public int targetSteps;
+    [HideInInspector] public int targetSteps;
 
     void Awake()
     {
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 nextJump = NextJump();
             JumpToPosition(nextJump);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(jumpSpeed);
         }
 
         Transform tile = GetCurrentTile();

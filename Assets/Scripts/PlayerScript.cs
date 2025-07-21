@@ -42,14 +42,16 @@ public class PlayerScript : MonoBehaviour
         {
             playerMovement.JumpToPosition(commonTiles[startIndex].position);
             inJail = false;
+            GameEvent.EnableButton?.Invoke();
         }
         else
         {
-            playerMovement.IntialJumpLoop(this,targetPosition);
+            playerMovement.IntialJumpLoop(this, targetPosition);
         }
 
         _pawnSelector.DisableSelection(playerIndex - 1);
         selectionIndication.Stop();
+        // GameEvent.EnableButton?.Invoke();
     }
 
     // Turn selection bool off and on
