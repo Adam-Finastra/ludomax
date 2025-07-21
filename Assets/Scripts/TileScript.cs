@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -75,7 +74,8 @@ public class TileScript : MonoBehaviour
     private void CancelPawn(PlayerScript pawn)
     {
         pawn.inJail = true;
-        pawn.playerPosition = -1;
+        pawn.playerPosition = 0;
+        pawn.steps = 0;
         pawn.transform.position = pawn.startPos.position;
         allpawns.Remove(pawn);
 

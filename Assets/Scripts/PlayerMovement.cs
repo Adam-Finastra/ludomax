@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] bool isDebug;
     [SerializeField] float jumpHeight = 0.1f;
-    [SerializeField] float jumpSpeed;
+    [SerializeField] public float jumpSpeed = 0.4f;
 
     private int tileCount;
     private List<Transform> commonTiles = new List<Transform>();
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        jumpSpeed = 0.4f;
         teamScript = GetComponentInParent<TeamScript>();
     }
 
@@ -37,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator StartJump()
     {
         if (playerScript.inhomePath && targetSteps > 56)
+        {
+            GameEvent.EnableButton?.Invoke();
             yield break;
+        }
             
         while (playerScript.steps < targetSteps)
         {

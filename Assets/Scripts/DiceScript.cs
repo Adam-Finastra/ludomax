@@ -56,18 +56,10 @@ public class DiceScript : MonoBehaviour
 
         diceAnimation.SetActive(false);
 
-        if (!DiceBase.IsDebug && rolledTimes <= 3)
+        if (!DiceBase.IsDebug)
         {
             DiceBase.rollValue = UnityEngine.Random.Range(1, 7);
             lastValue = DiceBase.rollValue;
-            if (lastValue != 6)
-            {
-                rolledTimes++;
-            }
-        }
-        else if (rolledTimes > 3)
-        {
-            DiceBase.rollValue = StartRoll(4);
         }
 
         button.enabled = false;
