@@ -7,15 +7,25 @@ using System.Linq.Expressions;
 
 public class Popup : MonoBehaviour
 {
+    public static Popup instance;
     [SerializeField]
     public RectTransform popuppanel;
     bool popou = false;
     float time = 3f;
     [SerializeField]
+    private RectTransform winningpanel;
+    [SerializeField]
     private ParticleSystem confettiee;
     [SerializeField]
     private RectTransform options;
     bool optionison = false;
+    private void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start()
     {
         popuppanel.localScale = Vector3.zero;
@@ -26,7 +36,7 @@ public class Popup : MonoBehaviour
     public void showpopup()
     {
       popuppanel.gameObject.SetActive(true);
-      popuppanel.DOScale(new Vector3(1.194727f, 1.194727f, 1.194727f), 0.5f).SetEase(Ease.OutBack);
+      popuppanel.DOScale(new Vector3(1.363781f, 1.363781f, 1.363781f), 0.5f).SetEase(Ease.OutBack);
       StartCoroutine(setting_timescale_to_zero());
      
     }
@@ -68,7 +78,12 @@ public class Popup : MonoBehaviour
         options.gameObject.SetActive(false);
         
     }
-
+   public void win()
+    {
+        winningpanel.gameObject.SetActive(true);
+        winningpanel.DOScale(new Vector3(1.363781f, 1.363781f, 1.363781f), 0.5f).SetEase(Ease.OutBack);
+        Debug.LogError("the winning panel is getting triggered");
+    }
 
 
  

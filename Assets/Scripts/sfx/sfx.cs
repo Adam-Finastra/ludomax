@@ -12,8 +12,8 @@ public class sfx : MonoBehaviour
     private AudioClip diceclip;
     [SerializeField]
     private AudioClip jumpclip;
-    [SerializeField]
-    private AudioClip winningclip;
+   // [SerializeField]
+  //  private AudioClip winningclip;
     [SerializeField]
     private AudioSource Bgaudio;
     [SerializeField]
@@ -58,7 +58,7 @@ public class sfx : MonoBehaviour
     }
     public void winning()
     {
-        effectsaudiosource.PlayOneShot(winningclip);
+        //effectsaudiosource.PlayOneShot(winningclip);
     }
     public void mastervoliume()
     {

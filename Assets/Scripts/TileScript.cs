@@ -64,6 +64,7 @@ public class TileScript : MonoBehaviour
     private void HandleWin(PlayerScript player)
     {
         Log($" {player.name} reached finish line");
+        Popup.instance.win();
         RemovePlayerFromGame(player);
     }
     private void HandleSafeZone(PlayerScript player)
