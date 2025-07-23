@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] bool isDebug;
     [SerializeField] float jumpHeight = 0.1f;
-    [SerializeField] float jumpSpeed;
+    [SerializeField] float jumpSpeed = 0.4f;
 
     private int tileCount;
     private List<Transform> commonTiles = new List<Transform>();
@@ -37,7 +37,11 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator StartJump()
     {
         if (playerScript.inhomePath && targetSteps > 56)
+        {
+            GameEvent.EnableButton?.Invoke();
             yield break;
+        }
+            
             
         while (playerScript.steps < targetSteps)
         {
@@ -67,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
                                       Mathf.Max(startPos.y, targetPos.y) + jumpHeight);
 
         Sequence jumpSeq = DOTween.Sequence();
+        sfx.sfxinstance.jumpsound();
         jumpSeq.Append(transform.DOMove(peakPos, 0.2f).SetEase(Ease.OutQuad));
         jumpSeq.Append(transform.DOMove(targetPos, 0.2f).SetEase(Ease.InQuad));
     }
