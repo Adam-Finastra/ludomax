@@ -431,12 +431,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 13
-  startPosition: 13
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 13
   selectionIndication: {fileID: 1016377218}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &102990797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -806,12 +810,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 0
-  startPosition: 0
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 0
+  playerPosition: 0
   selectionIndication: {fileID: 1741833110}
+  steps: 0
+  isSelectable: 0
 --- !u!58 &224064853
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -880,7 +888,6 @@ MonoBehaviour:
   effectsaudiosource: {fileID: 2062726942}
   diceclip: {fileID: 8300000, guid: f18a424b3387be640aea77abf89f3f95, type: 3}
   jumpclip: {fileID: 8300000, guid: fd28939d765dc1448bcaa4fffe44a9f1, type: 3}
-  winningclip: {fileID: 0}
   Bgaudio: {fileID: 1734847071}
   Bgvoliumeslider: {fileID: 468733934}
   effectsvoliumelider: {fileID: 1239615572}
@@ -1685,12 +1692,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 39
-  startPosition: 39
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 39
   selectionIndication: {fileID: 1525529968}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &315731823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1830,12 +1841,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 39
-  startPosition: 39
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 39
   selectionIndication: {fileID: 292927152}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &353415095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1994,12 +2009,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 0
-  startPosition: 0
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 0
+  playerPosition: 0
   selectionIndication: {fileID: 1367372239}
+  steps: 0
+  isSelectable: 0
 --- !u!58 &362263842
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2264,7 +2283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &430411173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2827,8 +2846,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 0
-  startPosition: 0
+  startIndex: 0
   isDebug: 0
+  playerPawns: []
+  movablePawns: []
+  teamTile: []
 --- !u!114 &512183481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,8 +2863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643d857ec0da44acc9a2cec7a56c7580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPawns: []
-  movablePawns: []
+  isDebug: 0
 --- !u!1 &525518604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,12 +2948,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 13
-  startPosition: 13
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 13
   selectionIndication: {fileID: 287923950}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &525518608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3072,12 +3097,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 26
-  startPosition: 26
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 26
   selectionIndication: {fileID: 451126448}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &543732736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3435,7 +3464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &710946757
 Transform:
   m_ObjectHideFlags: 0
@@ -3444,7 +3473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710946756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3453,7 +3482,7 @@ Transform:
   - {fileID: 315731820}
   - {fileID: 353415092}
   - {fileID: 732528420}
-  m_Father: {fileID: 892493487}
+  m_Father: {fileID: 784976831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &710946758
 MonoBehaviour:
@@ -3467,8 +3496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643d857ec0da44acc9a2cec7a56c7580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPawns: []
-  movablePawns: []
+  isDebug: 0
 --- !u!114 &710946759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3482,8 +3510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 3
-  startPosition: 0
+  startIndex: 0
   isDebug: 0
+  playerPawns: []
+  movablePawns: []
+  teamTile: []
 --- !u!1 &711948952
 GameObject:
   m_ObjectHideFlags: 0
@@ -3518,7 +3549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -10, y: 330}
+  m_AnchoredPosition: {x: -9.999939, y: 330}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &732528419
@@ -3605,12 +3636,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 39
-  startPosition: 39
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 39
   selectionIndication: {fileID: 2064921727}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &732528423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3680,6 +3715,7 @@ GameObject:
   - component: {fileID: 742203052}
   - component: {fileID: 742203051}
   - component: {fileID: 742203050}
+  - component: {fileID: 742203055}
   m_Layer: 0
   m_Name: DiceObject
   m_TagString: Untagged
@@ -3837,7 +3873,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 1272268957}
   diceObjects: {fileID: 1990076836}
-  isLog: 0
+  isDebug: 1
+--- !u!114 &742203055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742203048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &758404819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,6 +4181,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1569894931}
+  - {fileID: 1567305830}
+  - {fileID: 710946757}
   - {fileID: 892493487}
   - {fileID: 2026738582237928259}
   m_Father: {fileID: 0}
@@ -4211,12 +4271,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 26
-  startPosition: 26
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 26
   selectionIndication: {fileID: 288259820}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &799061743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4507,8 +4571,6 @@ Transform:
   m_Children:
   - {fileID: 512183478}
   - {fileID: 1967336545}
-  - {fileID: 1567305830}
-  - {fileID: 710946757}
   m_Father: {fileID: 784976831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &892493488
@@ -4697,7 +4759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 687448039}
   diceObjects: {fileID: 1374706809}
-  isLog: 0
+  isDebug: 1
 --- !u!1 &958367691
 GameObject:
   m_ObjectHideFlags: 0
@@ -5272,12 +5334,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 26
-  startPosition: 26
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 26
   selectionIndication: {fileID: 760380073}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &1071507871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5417,12 +5483,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 13
-  startPosition: 13
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 13
   selectionIndication: {fileID: 1154953030}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &1072533216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5843,12 +5913,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 0
-  startPosition: 0
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 0
+  playerPosition: 0
   selectionIndication: {fileID: 1023146268}
+  steps: 0
+  isSelectable: 0
 --- !u!58 &1109641079
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5969,12 +6043,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 13
-  startPosition: 13
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 13
   selectionIndication: {fileID: 2067266994}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &1119696068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6560,12 +6638,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 0
-  startPosition: 0
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 0
+  playerPosition: 0
   selectionIndication: {fileID: 1937857276}
+  steps: 0
+  isSelectable: 0
 --- !u!58 &1241878499
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7105,7 +7187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 2005352584}
   diceObjects: {fileID: 64057712}
-  isLog: 0
+  isDebug: 1
 --- !u!1 &1326487629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7190,12 +7272,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 39
-  startPosition: 39
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 39
   selectionIndication: {fileID: 1262685221}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &1326487633
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7251,6 +7337,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1355134912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355134914}
+  - component: {fileID: 1355134915}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355134914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355134912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1136.4652, y: 2545.197, z: -0.63375115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355134915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355134912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eefc82ac3445e7a488d8bdc4cb922ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playernames:
+  - {fileID: 189922943}
+  - {fileID: 421832263}
+  - {fileID: 248453713}
+  - {fileID: 1424561331}
+  playerindicator:
+  - {fileID: 1357988776}
+  - {fileID: 2018804828}
+  - {fileID: 1789770454}
+  - {fileID: 430411172}
 --- !u!1 &1357988776
 GameObject:
   m_ObjectHideFlags: 0
@@ -7268,7 +7408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1357988777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7746,11 +7886,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520841005}
-  - component: {fileID: 1520841006}
   - component: {fileID: 1520841008}
   - component: {fileID: 1520841007}
   - component: {fileID: 1520841009}
   - component: {fileID: 1520841010}
+  - component: {fileID: 1520841006}
+  - component: {fileID: 1520841011}
   m_Layer: 0
   m_Name: DiceObject
   m_TagString: Untagged
@@ -7792,7 +7933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceAnimation: {fileID: 1140686767}
   diceObjects: {fileID: 839429787}
-  isLog: 1
+  isDebug: 1
 --- !u!114 &1520841007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7909,6 +8050,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1520841011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520841004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1525529966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8517,7 +8680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1567305830
 Transform:
   m_ObjectHideFlags: 0
@@ -8526,7 +8689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567305829}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8535,7 +8698,7 @@ Transform:
   - {fileID: 543732733}
   - {fileID: 1071507868}
   - {fileID: 799061740}
-  m_Father: {fileID: 892493487}
+  m_Father: {fileID: 784976831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1567305831
 MonoBehaviour:
@@ -8549,8 +8712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643d857ec0da44acc9a2cec7a56c7580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPawns: []
-  movablePawns: []
+  isDebug: 0
 --- !u!114 &1567305832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8564,8 +8726,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 2
-  startPosition: 0
+  startIndex: 0
   isDebug: 0
+  playerPawns: []
+  movablePawns: []
+  teamTile: []
 --- !u!1 &1569894930
 GameObject:
   m_ObjectHideFlags: 0
@@ -9028,7 +9193,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744736767}
-  - component: {fileID: 1744736766}
   - component: {fileID: 1744736768}
   m_Layer: 0
   m_Name: GameObject
@@ -9037,23 +9201,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1744736766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744736765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d8c6bed4f40cf4abb763c97f4b3dc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1Text:
-  - {fileID: 189922943}
-  - {fileID: 421832263}
-  - {fileID: 248453713}
-  - {fileID: 1424561331}
 --- !u!4 &1744736767
 Transform:
   m_ObjectHideFlags: 0
@@ -9086,6 +9233,7 @@ MonoBehaviour:
   - {fileID: 742203048}
   - {fileID: 927266564}
   - {fileID: 1291493190}
+  isDebug: 0
 --- !u!1 &1789770454
 GameObject:
   m_ObjectHideFlags: 0
@@ -9103,7 +9251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1789770455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9245,12 +9393,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  inhomePath: 0
+  startPos: {fileID: 0}
   playerIndex: 0
-  playerPosition: 26
-  startPosition: 26
-  jumpHeight: 0.2
+  teamType: 0
+  startIndex: 0
   isDebug: 1
+  playerPosition: 26
   selectionIndication: {fileID: 1225953735}
+  steps: 0
+  isSelectable: 0
 --- !u!212 &1810994512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9610,8 +9762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643d857ec0da44acc9a2cec7a56c7580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPawns: []
-  movablePawns: []
+  isDebug: 0
 --- !u!114 &1967336547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9625,8 +9776,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamType: 1
-  startPosition: 14
+  startIndex: 0
   isDebug: 0
+  playerPawns: []
+  movablePawns: []
+  teamTile: []
 --- !u!1 &1990076836
 GameObject:
   m_ObjectHideFlags: 0
@@ -9783,7 +9937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018804829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12334,6 +12488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1560958509}
     m_Modifications:
+    - target: {fileID: 160779825589764146, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 512106580013417361, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12356,7 +12514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3127181221950452633, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3520940233163908472, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12449,6 +12607,18 @@ PrefabInstance:
     - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063157495940787693, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1355134915}
+    - target: {fileID: 8063157495940787693, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeftRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063157495940787693, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: showingThesavedname, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8491303486198162331, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -13982,3 +14152,4 @@ SceneRoots:
   - {fileID: 1734847072}
   - {fileID: 2062726943}
   - {fileID: 226023218}
+  - {fileID: 1355134914}

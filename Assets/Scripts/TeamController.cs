@@ -44,13 +44,15 @@ public class TeamController : MonoBehaviour
 
         switch (value)
         {
+            
             case 6:
-                team.HandleSixRoll();
-                // Six Roll
+               team.HandleSixRoll();
+             
                 break;
+            
             default:
                 team.HandleNormalRoll();
-                // Normal Roll
+                 
                 break;
         }
     }
