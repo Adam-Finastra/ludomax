@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 224064851}
   - component: {fileID: 224064852}
   - component: {fileID: 224064853}
+  - component: {fileID: 224064854}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -856,6 +857,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
   m_Radius: 0.49999997
+--- !u!114 &224064854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224064849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
+  jumpSpeed: 0.4
+  targetSteps: 0
 --- !u!1 &226023216
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226023216}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 657.8144, y: 1231.07, z: -9.869801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1918,6 +1935,7 @@ GameObject:
   - component: {fileID: 362263840}
   - component: {fileID: 362263841}
   - component: {fileID: 362263842}
+  - component: {fileID: 362263843}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -2055,6 +2073,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
   m_Radius: 0.49999997
+--- !u!114 &362263843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362263838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
+  jumpSpeed: 0.4
+  targetSteps: 0
 --- !u!1 &387302352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,6 +3908,7 @@ MonoBehaviour:
   diceAnimation: {fileID: 1272268957}
   diceObjects: {fileID: 1990076836}
   isDebug: 1
+  debugvalue: 0
 --- !u!114 &742203055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4549,6 +4584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892493487}
   - component: {fileID: 892493488}
+  - component: {fileID: 892493489}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -4588,6 +4624,29 @@ MonoBehaviour:
   teamIndex: 0
   isDebug: 1
   teams: []
+--- !u!114 &892493489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892493486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1109641081}
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &927266564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +4819,7 @@ MonoBehaviour:
   diceAnimation: {fileID: 687448039}
   diceObjects: {fileID: 1374706809}
   isDebug: 1
+  debugvalue: 0
 --- !u!1 &958367691
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,6 +5882,9 @@ GameObject:
   - component: {fileID: 1109641077}
   - component: {fileID: 1109641078}
   - component: {fileID: 1109641079}
+  - component: {fileID: 1109641080}
+  - component: {fileID: 1109641081}
+  - component: {fileID: 1109641082}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -5914,7 +5977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inJail: 1
   inhomePath: 0
-  startPos: {fileID: 0}
+  startPos: {fileID: 162425089372988618}
   playerIndex: 0
   teamType: 0
   startIndex: 0
@@ -5959,6 +6022,78 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000047683716}
   m_Radius: 0.49999997
+--- !u!114 &1109641080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109641075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
+  jumpSpeed: 0.4
+  targetSteps: 0
+--- !u!114 &1109641081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109641075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &1109641082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109641075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1109641081}
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1119696064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,6 +6682,7 @@ GameObject:
   - component: {fileID: 1241878497}
   - component: {fileID: 1241878498}
   - component: {fileID: 1241878499}
+  - component: {fileID: 1241878500}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -6684,6 +6820,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
   m_Radius: 0.49999997
+--- !u!114 &1241878500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241878495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cdfb4f2c07334b5f93c3aac7b261e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebug: 0
+  jumpHeight: 0.1
+  jumpSpeed: 0.4
+  targetSteps: 0
 --- !u!1 &1247022761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7188,6 +7340,7 @@ MonoBehaviour:
   diceAnimation: {fileID: 2005352584}
   diceObjects: {fileID: 64057712}
   isDebug: 1
+  debugvalue: 0
 --- !u!1 &1326487629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7934,6 +8087,7 @@ MonoBehaviour:
   diceAnimation: {fileID: 1140686767}
   diceObjects: {fileID: 839429787}
   isDebug: 1
+  debugvalue: 0
 --- !u!114 &1520841007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8492,6 +8646,7 @@ GameObject:
   - component: {fileID: 1560958508}
   - component: {fileID: 1560958507}
   - component: {fileID: 1560958506}
+  - component: {fileID: 1560958510}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8586,6 +8741,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1560958510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560958505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988a139a5e3ff4bd6875d57b97539a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebugProxy: 0
+  rollValueProxy: 0
+  toggle: {fileID: 0}
 --- !u!1 &1561298435
 GameObject:
   m_ObjectHideFlags: 0
@@ -12614,7 +12784,7 @@ PrefabInstance:
       objectReference: {fileID: 1355134915}
     - target: {fileID: 8063157495940787693, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LeftRoom
+      value: leftroom
       objectReference: {fileID: 0}
     - target: {fileID: 8063157495940787693, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -14151,5 +14321,5 @@ SceneRoots:
   - {fileID: 1744736767}
   - {fileID: 1734847072}
   - {fileID: 2062726943}
-  - {fileID: 226023218}
   - {fileID: 1355134914}
+  - {fileID: 226023218}

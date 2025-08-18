@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class showingThesavedname : MonoBehaviourPunCallbacks
+public class showingThesavedname : MonoBehaviourPun
 {
     public static showingThesavedname instance;
     [SerializeField] private TextMeshProUGUI[] playernames;
@@ -18,17 +18,15 @@ public class showingThesavedname : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+      if(instance != null && instance != this)
         {
             Destroy(this.gameObject);
-            return;
-
         }
-        else
-        {
-            instance = this;
-        }
+       
+     instance = this;
+        
     }
+    
     private void Update()
     {
         indicator();
@@ -39,17 +37,9 @@ public class showingThesavedname : MonoBehaviourPunCallbacks
         updateplayernames();
         indicator();
     }
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        updateplayernames();
-        indicator();
-    }
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        updateplayernames();
-        indicator();
-    }
-
+ 
+    
+ 
     void updateplayernames()
     {
         Player[] players = PhotonNetwork.PlayerList;
@@ -65,9 +55,11 @@ public class showingThesavedname : MonoBehaviourPunCallbacks
     }
     void indicator()
     {
+      
         Player[] players = PhotonNetwork.PlayerList;
         for (int i = 0; i < playernames.Length; i++)
         {
+            if (playerindicator[i] == null) return;
             if (i < players.Length && players[i] == PhotonNetwork.MasterClient)
             {
                 playerindicator[i].SetActive(true);
@@ -122,29 +114,12 @@ public class showingThesavedname : MonoBehaviourPunCallbacks
             Debug.LogWarning("Target player not found or is already master client");
         }
     }
+    public void leftroom()
+    {
+        Gamemanager.instance.LeftRoom();
+    }
 
-    public void LeftRoom()
-    {
-        if (PhotonNetwork.InRoom)
-        {
-            PhotonNetwork.LeaveRoom();
-            StartCoroutine(loadlevel());
-        }
-    }
-    IEnumerator loadlevel()
-    {
-        yield return new WaitForSeconds(2f);
-        PhotonNetwork.LoadLevel(0);
-    }
-    public void Diconnectroom()
-    {
-       if(PhotonNetwork.IsConnected)
-        {
-            PhotonNetwork.Disconnect();
-           
-        }
-    }
-   void playercound()
+    void playercound()
     {
         int index;
         Player[] player = PhotonNetwork.PlayerList;

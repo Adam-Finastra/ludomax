@@ -8,6 +8,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
 {
     [Header("UI References")]
     public TMP_InputField nickname;
+    public static Gamemanager instance;
 
     [Header("Settings")]
     public string targetSceneName = "GameScene"; // Use scene name instead of index
@@ -22,16 +23,23 @@ public class Gamemanager : MonoBehaviourPunCallbacks
     string lastnameroom;
     private void Awake()
     {
-        // Ensure only one instance of PhotonNetwork exists
-        if (PhotonNetwork.IsConnected)
-        {
-            PhotonNetwork.Disconnect();
-        }
+        
 
         PhotonNetwork.AutomaticallySyncScene = true;
 
         // Connect to Photon
         ConnectToPhoton();
+       
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+
     }
 
     private void ConnectToPhoton()
@@ -58,6 +66,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
         Debug.Log("Joined the lobby successfully");
        
     }
+    
 
     /*
     public override void OnDisconnected(DisconnectCause cause)
@@ -75,6 +84,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
 
     public void JoinOrCreateRoom()
     {
+        
         // Validate input
         if (nickname == null)
         {
@@ -91,14 +101,12 @@ public class Gamemanager : MonoBehaviourPunCallbacks
             return;
         }
 
-        if (!PhotonNetwork.IsConnectedAndReady)
-        {
-            
-            return;
-        }
+      
+        
 
-        // Set player nickname
+       // Set player nickname
         PhotonNetwork.NickName = playername;
+        
         Debug.Log($"Attempting to join/create room with nickname: {PhotonNetwork.NickName}");
 
        PhotonNetwork.JoinRandomRoom();
@@ -137,22 +145,8 @@ public class Gamemanager : MonoBehaviourPunCallbacks
 
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
-        Debug.LogError($"Failed to create room: {message} (Code: {returnCode})");
 
-        lastroomname = showingThesavedname.instance.lastroomjoinname();
-        if (string.IsNullOrEmpty(lastroomname))
-        {
-            CreateNewRoom();
-            Debug.LogError("trying join old room is failed now trying to create a new room" + lastroomname);
-        }
-        else
-        {
-            PhotonNetwork.JoinRoom(lastroomname);
-            Debug.LogError("trying to join the old existing room");
-        }
-
-
-
+        CreateNewRoom();
     }
 
     public override void OnJoinedRoom()
@@ -167,6 +161,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel(1);
         }
     }
+    
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
@@ -188,4 +183,28 @@ public class Gamemanager : MonoBehaviourPunCallbacks
             PhotonNetwork.SendAllOutgoingCommands();
         }
     }
+    public void LeftRoom()
+    {
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom(); // Don't load scene here
+            Debug.Log(" trying laving the room");
+        }
+        else
+        {
+            LoadMainMenuScene();
+        }
+    }
+    public override void OnLeftRoom()
+    {
+        Debug.Log("Successfully left the room.");
+        LoadMainMenuScene();
+    }
+
+    void LoadMainMenuScene()
+    {
+        PhotonNetwork.LoadLevel(0);
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
 }

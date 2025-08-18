@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
-public class TeamController : MonoBehaviour
+public class TeamController : MonoBehaviourPun
 {
     [SerializeField] int teamIndex = 0;
     [SerializeField] bool isDebug;
@@ -21,7 +22,7 @@ public class TeamController : MonoBehaviour
         PlayerPrefs.Save();    }
     void OnEnable()
     {
-        DiceScript.DiceRoll += HandleDiceRoll;
+        DiceScript.DiceRoll += ondiceroll;
     }
     void Start()
     {
@@ -31,14 +32,21 @@ public class TeamController : MonoBehaviour
     }
     void OnDisable()
     {
-        DiceScript.DiceRoll -= HandleDiceRoll;
+        DiceScript.DiceRoll -= ondiceroll;
     }
-
+    void ondiceroll(int value)
+    {
+        photonView.RPC(nameof(HandleDiceRoll), RpcTarget.All, value);
+    }
+    
+    [PunRPC]
     public void HandleDiceRoll(int value)
     {
+          
         MyLogger($" dice rolled : value is  {value}");
         lastRollValue = value;
         PlayerPrefs.SetInt("DiceRoll", value);
+        PlayerPrefs.Save();
         TeamScript team = teams[teamIndex];
         EndTurn();
 
@@ -47,12 +55,16 @@ public class TeamController : MonoBehaviour
             
             case 6:
                team.HandleSixRoll();
-             
+                showingThesavedname.instance.ownershipchangeusingactor(teamIndex + 1);
+                MyLogger($"dice roll in case of six is happening {lastRollValue}");
+
+
                 break;
             
             default:
                 team.HandleNormalRoll();
-                 
+                showingThesavedname.instance.transferownership();
+                MyLogger($"the roll is case of  normal is working {lastRollValue}");
                 break;
         }
     }

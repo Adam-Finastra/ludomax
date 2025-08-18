@@ -44,6 +44,7 @@ MonoBehaviour:
   - RPC_InitializeGame
   - RPC_ProcessDiceRoll
   - RPC_UpdateTeamIndex
+  - HandleDiceRoll
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

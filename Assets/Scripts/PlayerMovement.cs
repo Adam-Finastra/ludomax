@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -23,8 +23,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        commonTiles = TileManager.Instance.CommonTiles();
-        tileCount = TileManager.Instance.CommonTilesCount();
+        if (TileManager.Instance == null)
+        {
+            Debug.LogError("⚠️ PlayerMovement: TileManager.Instance is NULL!");
+        }
+        else
+        {
+            commonTiles = TileManager.Instance.CommonTiles();
+            tileCount = TileManager.Instance.CommonTilesCount();
+            Debug.Log("✅ Loaded " + tileCount + " common tiles.");
+        }
     }
 
     public void IntialJumpLoop(PlayerScript player, int stepsToMove)
@@ -71,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
                                       Mathf.Max(startPos.y, targetPos.y) + jumpHeight);
 
         Sequence jumpSeq = DOTween.Sequence();
-        sfx.sfxinstance.jumpsound();
+      //  sfx.sfxinstance.jumpsound();
         jumpSeq.Append(transform.DOMove(peakPos, 0.2f).SetEase(Ease.OutQuad));
         jumpSeq.Append(transform.DOMove(targetPos, 0.2f).SetEase(Ease.InQuad));
     }
@@ -96,10 +104,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerScript.steps <= 50)
         {
+            MyLogger("we getting the tile from getcurrnttile ");
             return commonTiles[playerScript.playerPosition];
+          
         }
         else
         {
+            MyLogger("the else debug is working");
             List<Transform> homeTiles = teamScript.TurnTile();
             return homeTiles[Mathf.Clamp(playerScript.playerPosition - 1, 0, homeTiles.Count - 1)];
         }

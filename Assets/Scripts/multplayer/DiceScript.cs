@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,9 +17,11 @@ public class DiceScript : MonoBehaviourPunCallbacks
     private Image[] diceSprites;
     private Button button;
     public static Action<int> DiceRoll;
-    bool isdebug = false;
-   
-    
+    //  bool isdebug = false;
+    [SerializeField]
+    int debugvalue;
+
+
     void Awake()
     {
         button = GetComponent<Button>();
@@ -35,7 +38,7 @@ public class DiceScript : MonoBehaviourPunCallbacks
     void Start()
 
     {
-       
+
         diceAnimation.SetActive(false);
         diceSprites = diceObjects.GetComponentsInChildren<Image>();
 
@@ -54,7 +57,7 @@ public class DiceScript : MonoBehaviourPunCallbacks
         photonView.RPC(nameof(RPC_startdiceroll), RpcTarget.All);
     }
     [PunRPC]
-   public void RPC_startdiceroll()
+    public void RPC_startdiceroll()
     {
         StartCoroutine(RollDice());
         Debug.Log("started the diceroll");
@@ -65,49 +68,43 @@ public class DiceScript : MonoBehaviourPunCallbacks
         diceAnimation.SetActive(true);
         sfx.sfxinstance.dicesfx();
 
-        showingThesavedname.instance.transferownership();
+       
 
         yield return new WaitForSeconds(1f);
-       
+
         diceAnimation.SetActive(false);
-       
 
-        int rolledValue = DiceBase.rollValue; // fallback or debug value
 
-        if (!DiceBase.IsDebug)
+        int rolledValue = 1;
+        if (photonView.IsMine)
         {
-            
-            if (photonView.IsMine && !isdebug)
+            if (!DiceBase.IsDebug)
             {
                 rolledValue = UnityEngine.Random.Range(1, 7);
-                DiceBase.rollValue = rolledValue;
-               
-               
-
-                Log($"dice rolled :{rolledValue} & probability tracker is {rolledTimes}");
-
-                // Send correct roll to all clients
-                photonView.RPC(nameof(RPC_ShowResult), RpcTarget.All, rolledValue);
-                button.enabled = false; 
+                Debug.Log("the dice roll is in normal mode" + rolledValue);
             }
-           
-
-        
-            DiceRoll?.Invoke(DiceBase.rollValue);
-            Log($"dice rolled :{DiceBase.rollValue} & probablity tracker is {rolledTimes}");
-        }  
+            else
+            {
+                rolledValue = DiceBase.rollValue;
+                Debug.Log("the dice roll is in debug mode" + rolledValue);
+            }
+            photonView.RPC(nameof(RPC_ShowResult), RpcTarget.All, rolledValue);
+            button.enabled = false;
+            DiceRoll?.Invoke(rolledValue);
+        }
     }
     [PunRPC]
     void RPC_ShowResult(int value)
     {
         ShowDice(value - 1);
         Debug.Log($"Dice rolled: {value}");
+       
     }
 
     public void ChangeButton()
     {
         Log($" a pawn in request to change the button");
-        // button.enabled = button.enabled == true ? false : true;
+       
         button.enabled = true;
     }
     private void ShowDice(int value)
