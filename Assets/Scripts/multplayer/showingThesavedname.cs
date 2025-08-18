@@ -30,7 +30,7 @@ public class showingThesavedname : MonoBehaviourPun
     private void Update()
     {
         indicator();
-        playercound();
+        // playercound();
     }
     private void Start()
     {
