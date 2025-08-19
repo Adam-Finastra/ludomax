@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
-public class PawnSelector : MonoBehaviour
+public class PawnSelector : MonoBehaviourPun
 {
     private TeamScript team;
     [SerializeField] bool isDebug;
@@ -16,34 +17,41 @@ public class PawnSelector : MonoBehaviour
 
     public void EnableSelection()
     {
-        foreach (PlayerScript item in team.playerPawns)
+        if (photonView.IsMine)
         {
-            item.SelectionSwitch(1);
+            foreach (PlayerScript item in team.playerPawns)
+            {
+                item.SelectionSwitch(1);
+            }
         }
+   
     }
 
     public void OnlyEnableMovable()
     {
-        if (team.movablePawns.Count > 0)
-        {
-            MyLogger($"Movable token count: {team.movablePawns.Count}");
-            foreach (PlayerScript item in team.movablePawns)
+     
+        
+            if (team.movablePawns.Count > 0)
             {
-                if (!item.inJail)
+                MyLogger($"Movable token count: {team.movablePawns.Count}");
+                foreach (PlayerScript item in team.movablePawns)
                 {
-                    item.SelectionSwitch(1);
-                }
-                else
-                {
-                    MyLogger("Player is in jail.");
+                    if (!item.inJail)
+                    {
+                        item.SelectionSwitch(1);
+                    }
+                    else
+                    {
+                        MyLogger("Player is in jail.");
+                    }
                 }
             }
-        }
-        else
-        {
-            MyLogger("No movable tokens.");
-            UIManager.Instance.TurnIndication();
-        }
+            else
+            {
+                MyLogger("No movable tokens.");
+                UIManager.Instance.TurnIndication();
+            }
+        
     }
 
     public void DisableSelection(int movablePawn)

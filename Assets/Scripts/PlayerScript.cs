@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviourPun
 {
     public bool inJail = true;
     public bool inhomePath;
@@ -33,8 +34,10 @@ public class PlayerScript : MonoBehaviour
     }
     void OnMouseDown()
     {
-        MyLogger($" {steps}");
         if (!isSelectable) return;
+        if (!photonView.IsMine) return;
+        MyLogger($" {steps}");
+       
 
         targetPosition = PlayerPrefs.GetInt("DiceRoll", 0);
 
@@ -72,6 +75,8 @@ public class PlayerScript : MonoBehaviour
             selectionIndication.Stop();
         }
     }
+   
+  
 
     private void MyLogger(string message)
     {

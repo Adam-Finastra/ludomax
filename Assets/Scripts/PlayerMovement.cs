@@ -110,8 +110,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            MyLogger("the else debug is working");
+            
             List<Transform> homeTiles = teamScript.TurnTile();
+            MyLogger("the else debug is working");
             return homeTiles[Mathf.Clamp(playerScript.playerPosition - 1, 0, homeTiles.Count - 1)];
         }
     }

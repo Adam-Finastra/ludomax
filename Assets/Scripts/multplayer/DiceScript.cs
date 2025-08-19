@@ -89,9 +89,10 @@ public class DiceScript : MonoBehaviourPunCallbacks
                 Debug.Log("the dice roll is in debug mode" + rolledValue);
             }
             photonView.RPC(nameof(RPC_ShowResult), RpcTarget.All, rolledValue);
-            button.enabled = false;
+            
             DiceRoll?.Invoke(rolledValue);
         }
+        button.enabled = false;
     }
     [PunRPC]
     void RPC_ShowResult(int value)
