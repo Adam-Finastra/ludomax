@@ -927,7 +927,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051719790}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: back, Assembly-CSharp
         m_MethodName: backward
         m_Mode: 1
@@ -4808,7 +4808,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744736765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f36bcdf488e933b41bc8c1dd2367d4e0, type: 3}
   m_Name: 
@@ -5207,6 +5207,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962877388}
   m_CullTransparentMesh: 1
+--- !u!1 &1981117945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1981117948}
+  - component: {fileID: 1981117946}
+  - component: {fileID: 1981117949}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1981117946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981117945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c416f598e1597d47adfb15e3b594444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1981117948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981117945}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1059.9585, y: 1849.6765, z: -11.20295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1981117949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981117945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8043705e41f014f10ac68bbc34728bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 2035593204}
+  mouseClick:
+    m_Name: Mouse Click
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: e2655d4f-8b50-48ce-b5b4-8492221ef016
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 44b892ea-e5db-4626-b556-e6650cc7981e
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Click
+      m_Flags: 0
+    m_Flags: 0
+  mousePosition:
+    m_Name: Mouse Position
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 365e6e31-576f-4ca8-ab31-4938cfa0a0d8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 187fe424-9b72-4821-b097-fcf6963e4423
+      m_Path: <Touchscreen>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Position
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &1990076836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,50 +5645,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2051719789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2051719791}
-  - component: {fileID: 2051719790}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2051719790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051719789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c416f598e1597d47adfb15e3b594444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2051719791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051719789}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1059.9585, y: 1849.6765, z: -11.20295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11304,7 +11352,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!4 &607179387030154988
 Transform:
   m_ObjectHideFlags: 0
@@ -21200,7 +21248,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!1 &1118692400584549815
 GameObject:
   m_ObjectHideFlags: 0
@@ -21361,6 +21409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &1418257246174723590
 GameObject:
@@ -21423,7 +21472,7 @@ GameObject:
   - component: {fileID: 5746311053438459972}
   - component: {fileID: 2045667773660186264}
   - component: {fileID: 5746311053438459973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21465,7 +21514,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!58 &1563587981170896972
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21501,7 +21550,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!4 &1569817588947749735
 Transform:
   m_ObjectHideFlags: 0
@@ -21577,7 +21626,7 @@ GameObject:
   - component: {fileID: 7470630061493313673}
   - component: {fileID: 9021943608828284163}
   - component: {fileID: 9021943608828284164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21645,6 +21694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &1730723361171142208
 Transform:
@@ -21709,6 +21759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!1 &1786989162843160717
 GameObject:
@@ -21739,7 +21790,7 @@ GameObject:
   - component: {fileID: 2175175594891557049}
   - component: {fileID: 4828750041307176955}
   - component: {fileID: 4828750041307176956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21790,6 +21841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &1807934492228065880
 Transform:
@@ -21920,6 +21972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!58 &2045667773660186264
 CircleCollider2D:
@@ -21956,7 +22009,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!1 &2116870412980003338
 GameObject:
   m_ObjectHideFlags: 0
@@ -21986,6 +22039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8670884776813556563}
   playerIndex: 3
@@ -22024,6 +22078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &2226620338306473990
 GameObject:
@@ -22055,6 +22110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!58 &2231125558789703499
 CircleCollider2D:
@@ -22091,7 +22147,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!4 &2263782134810483110
 Transform:
   m_ObjectHideFlags: 0
@@ -22301,7 +22357,7 @@ GameObject:
   - component: {fileID: 5168552757885786033}
   - component: {fileID: 3459543800122961285}
   - component: {fileID: 6703190331954416899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27194,7 +27250,7 @@ GameObject:
   - component: {fileID: 4498417702469070850}
   - component: {fileID: 5744819425812294404}
   - component: {fileID: 8377464037730939600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27229,6 +27285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!199 &2801643132125580503
 ParticleSystemRenderer:
@@ -27374,7 +27431,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!198 &2961597142923530408
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -32215,6 +32272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 6575382221708278416}
   playerIndex: 0
@@ -32301,6 +32359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &3140047737591146215
 GameObject:
@@ -32332,6 +32391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &3173607548238021696
 Transform:
@@ -32399,7 +32459,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!199 &3252046289494980417
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -32577,6 +32637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &3291713215142492117
 GameObject:
@@ -32625,6 +32686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &3298085377988317082
 Transform:
@@ -37569,7 +37631,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!4 &3476387838729484402
 Transform:
   m_ObjectHideFlags: 0
@@ -37633,6 +37695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &3601063559843313361
 SpriteRenderer:
@@ -37732,6 +37795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &3758518746380556975
 Transform:
@@ -37794,6 +37858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!199 &3883039354216171203
 ParticleSystemRenderer:
@@ -42700,7 +42765,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &3922060700338605613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42714,6 +42779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8980550042985198591}
   playerIndex: 2
@@ -42853,7 +42919,7 @@ GameObject:
   - component: {fileID: 2997100677339116601}
   - component: {fileID: 607049767919326773}
   - component: {fileID: 8409283583677183323}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42890,6 +42956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4160201006517506818
 Transform:
@@ -47872,6 +47939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8835392183405667417}
   playerIndex: 1
@@ -47910,6 +47978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &4338845566429220748
 GameObject:
@@ -48020,6 +48089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!212 &4446213274496270247
 SpriteRenderer:
@@ -48106,12 +48176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 3376282237353996376}
   playerIndex: 2
   teamType: 0
   startIndex: 0
-  isDebug: 0
+  isDebug: 1
   playerPosition: 0
   selectionIndication: {fileID: 3351120980750251812}
   steps: 0
@@ -48199,6 +48270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4554443260791650694
 Transform:
@@ -48228,6 +48300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4564264275587520143
 Transform:
@@ -48272,6 +48345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &4640862383116722091
 GameObject:
@@ -48302,7 +48376,7 @@ GameObject:
   - component: {fileID: 3922060700338605613}
   - component: {fileID: 1563587981170896972}
   - component: {fileID: 4677599234485068903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48370,6 +48444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4695692578402278090
 Transform:
@@ -48414,6 +48489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4766772455490390465
 Transform:
@@ -48443,6 +48519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!4 &4803144493675705204
 Transform:
@@ -48472,6 +48549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4805118822745333598
 Transform:
@@ -48501,6 +48579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!199 &4811096070790518494
 ParticleSystemRenderer:
@@ -48614,7 +48693,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &4828750041307176956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48716,6 +48795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4933614362301244840
 Transform:
@@ -53819,7 +53899,7 @@ GameObject:
   - component: {fileID: 4275053369741132239}
   - component: {fileID: 998979544010754634}
   - component: {fileID: 7029519564961651700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53856,6 +53936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &5144695283615752044
 Transform:
@@ -53885,6 +53966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!114 &5168552757885786033
 MonoBehaviour:
@@ -53899,12 +53981,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 5675946871332137328}
   playerIndex: 3
   teamType: 0
   startIndex: 0
-  isDebug: 0
+  isDebug: 1
   playerPosition: 0
   selectionIndication: {fileID: 7060133593199833557}
   steps: 0
@@ -53938,7 +54021,7 @@ GameObject:
   - component: {fileID: 5638824186290081245}
   - component: {fileID: 7465235322326993840}
   - component: {fileID: 7465235322326993841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58802,7 +58885,7 @@ GameObject:
   - component: {fileID: 7193465413816044434}
   - component: {fileID: 2231125558789703499}
   - component: {fileID: 8914473182447295690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58822,6 +58905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 7512478608896699490}
   playerIndex: 1
@@ -58939,6 +59023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!114 &5415415663448220846
 MonoBehaviour:
@@ -58953,12 +59038,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4968069131621807913}
   playerIndex: 1
   teamType: 0
   startIndex: 0
-  isDebug: 0
+  isDebug: 1
   playerPosition: 0
   selectionIndication: {fileID: 5565509187678096033}
   steps: 0
@@ -58992,6 +59078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8813501960998539163}
   playerIndex: 0
@@ -59015,12 +59102,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4564264275587520143}
   playerIndex: 0
   teamType: 0
   startIndex: 0
-  isDebug: 0
+  isDebug: 1
   playerPosition: 0
   selectionIndication: {fileID: 4986863860812701723}
   steps: 0
@@ -59106,6 +59194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!198 &5565509187678096033
 ParticleSystem:
@@ -64000,6 +64089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4273692372672454036}
   playerIndex: 0
@@ -64023,7 +64113,7 @@ GameObject:
   - component: {fileID: 5415415663448220846}
   - component: {fileID: 3913895915663738280}
   - component: {fileID: 7639134444063886026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64075,6 +64165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!114 &5706917274036404396
 MonoBehaviour:
@@ -64089,6 +64180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 1345264993980813401}
   playerIndex: 3
@@ -64155,7 +64247,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &5746311053438459972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64169,6 +64261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 9109843033783547364}
   playerIndex: 0
@@ -64251,7 +64344,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!1 &5926965006033623038
 GameObject:
   m_ObjectHideFlags: 0
@@ -64297,6 +64390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &5956528245677578062
 GameObject:
@@ -64363,7 +64457,7 @@ GameObject:
   - component: {fileID: 5382631320224337644}
   - component: {fileID: 3191779867997469307}
   - component: {fileID: 6050361363487348619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64718,6 +64812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6228250865344220847
 GameObject:
@@ -64749,6 +64844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6247828720164787553
 Transform:
@@ -64778,6 +64874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6271914333062626017
 Transform:
@@ -64845,6 +64942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &6280392863026345816
 GameObject:
@@ -64876,6 +64974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &6297564198906016651
 Transform:
@@ -64905,6 +65004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &6390047186465249138
 GameObject:
@@ -74692,6 +74792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6575382221708278416
 Transform:
@@ -74738,6 +74839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6679491342574060810
 GameObject:
@@ -74769,6 +74871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &6703190331954416898
 SpriteRenderer:
@@ -74869,6 +74972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6737860017480850038
 GameObject:
@@ -74900,6 +75004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6769486785935086790
 Transform:
@@ -74929,6 +75034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6775010460022249574
 Transform:
@@ -74977,7 +75083,7 @@ GameObject:
   - component: {fileID: 5425058623962814436}
   - component: {fileID: 2906023262559400195}
   - component: {fileID: 6877309419950989859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75012,6 +75118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &6877309419950989858
 SpriteRenderer:
@@ -79993,6 +80100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &7106806790275168524
 Transform:
@@ -80114,6 +80222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7134257979019866018
 Transform:
@@ -80160,6 +80269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4358161201351565989}
   playerIndex: 0
@@ -80199,7 +80309,7 @@ GameObject:
   - component: {fileID: 8182563447542966675}
   - component: {fileID: 9015183240928540748}
   - component: {fileID: 9015183240928540749}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85029,6 +85139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &7337177949291517876
 GameObject:
@@ -85076,6 +85187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7403207582464113870
 Transform:
@@ -85105,6 +85217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &7464862142839739958
 Transform:
@@ -85134,6 +85247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!58 &7465235322326993840
 CircleCollider2D:
@@ -85170,7 +85284,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000023841858, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &7465235322326993841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85200,6 +85314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 2534437748666284773}
   playerIndex: 0
@@ -85285,6 +85400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &7567464992720871673
 SpriteRenderer:
@@ -85387,6 +85503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7639134444063886025
 Transform:
@@ -85542,6 +85659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7790152436485314483
 GameObject:
@@ -85573,6 +85691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &7800127887358125817
 GameObject:
@@ -85604,6 +85723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7835735090421968156
 GameObject:
@@ -85635,6 +85755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7844148098926212694
 Transform:
@@ -90570,6 +90691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7952267512118687418
 Transform:
@@ -90668,6 +90790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &8089585272519544830
 GameObject:
@@ -90740,6 +90863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &8127273580988003175
 Transform:
@@ -90769,6 +90893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!114 &8182563447542966675
 MonoBehaviour:
@@ -90783,6 +90908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8584041780557647247}
   playerIndex: 3
@@ -90821,6 +90947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8255253370716483436
 Transform:
@@ -90865,6 +90992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &8264538454877907654
 GameObject:
@@ -90929,6 +91057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!114 &8348033077917144194
 MonoBehaviour:
@@ -91003,6 +91132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!4 &8409283583677183322
 Transform:
@@ -91101,6 +91231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &8565566511089102514
 SpriteRenderer:
@@ -91218,6 +91349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8662753612056128125
 Transform:
@@ -91247,6 +91379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8670884776813556563
 Transform:
@@ -91325,6 +91458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &8812601546459515873
 GameObject:
@@ -91339,7 +91473,7 @@ GameObject:
   - component: {fileID: 5434131236851531011}
   - component: {fileID: 5805796660022714739}
   - component: {fileID: 8812601546459515874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91454,7 +91588,7 @@ GameObject:
   - component: {fileID: 5706917274036404396}
   - component: {fileID: 1511924769944523612}
   - component: {fileID: 8876112928352477081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91554,6 +91688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &8968211319927707451
 Transform:
@@ -91583,6 +91718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!4 &8980550042985198591
 Transform:
@@ -91653,7 +91789,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &9015183240928540749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91705,7 +91841,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!114 &9021943608828284164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91766,6 +91902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &9109843033783547364
 Transform:
@@ -91828,6 +91965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &9131024800320951553
 GameObject:
@@ -91859,6 +91997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &9148775537252859649
 Transform:
@@ -91888,6 +92027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -91898,4 +92038,4 @@ SceneRoots:
   - {fileID: 1560958509}
   - {fileID: 1358214514}
   - {fileID: 1744736767}
-  - {fileID: 2051719791}
+  - {fileID: 1981117948}

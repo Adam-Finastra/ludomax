@@ -4,7 +4,8 @@ using UnityEngine;
 public class TileScript : MonoBehaviour
 {
     [SerializeField] private bool isLog;
-    private List<PlayerScript> allpawns = new List<PlayerScript>();
+    [SerializeField] private List<PlayerScript> allpawns = new List<PlayerScript>();
+    // private bool wasCancelled = false;
     // public static Action OnCancel;
     public enum TileType
     {
@@ -36,34 +37,26 @@ public class TileScript : MonoBehaviour
     {
         Log($" ready to cancel on {this.name}");
         allpawns.Add(arrivingPlayer);
-        List<PlayerScript> toCancel = new List<PlayerScript>();
+
+        // Searching for players of other team on the tile.
         foreach (var otherPawn in allpawns)
         {
             if (otherPawn == arrivingPlayer) continue;
             if (otherPawn.teamType == arrivingPlayer.teamType) continue;
             if (otherPawn.playerPosition == arrivingPlayer.playerPosition)
             {
-                toCancel.Add(otherPawn);
+                CancelPawn(otherPawn); // immediately cancelling pawn found.
+                return;
             }
         }
 
-        if (toCancel.Count > 0)
-        {
-            foreach (var item in toCancel)
-            {
-                CancelPawn(item);
-            }
-        }
-        else
-        {
-            UIManager.Instance.TurnIndication();
-            GameEvent.EnableButton?.Invoke();
-        }
+        UIManager.Instance.TurnIndication();
+        GameEvent.EnableButton?.Invoke();
     }
     private void HandleWin(PlayerScript player)
     {
         Log($" {player.name} reached finish line");
-        RemovePlayerFromGame(player);
+        RemovePlayerFromGame(player,true);
     }
     private void HandleSafeZone(PlayerScript player)
     {
@@ -74,21 +67,23 @@ public class TileScript : MonoBehaviour
     private void CancelPawn(PlayerScript pawn)
     {
         pawn.inJail = true;
-        pawn.playerPosition = 0;
+        pawn.playerPosition = pawn.startIndex;
         pawn.steps = 0;
         pawn.transform.position = pawn.startPos.position;
         allpawns.Remove(pawn);
 
-        RemovePlayerFromGame(pawn);
+        RemovePlayerFromGame(pawn,false);
 
         Log($"{pawn.name} was cancelled!");
     }
-    private void RemovePlayerFromGame(PlayerScript player)
+    private void RemovePlayerFromGame(PlayerScript player, bool state)
     {
         TeamScript team = player.GetComponentInParent<TeamScript>();
-        team.movablePawns.Remove(player); // removes chanced player from movable list
-                                          // team.playerPawns.Add(pawn);
-                                          // OnCancel?.Invoke();
+        team.movablePawns.Remove(player); // removes cancelled player from movable list
+        if (state)
+        {
+            team.playerPawns.Remove(player); // removes player from the game.
+        }
         GameEvent.EnableButton?.Invoke();
 
         TeamController teamController = team.GetComponentInParent<TeamController>();

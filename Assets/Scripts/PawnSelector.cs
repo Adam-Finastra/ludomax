@@ -53,11 +53,27 @@ public class PawnSelector : MonoBehaviour
             item.SelectionSwitch(0);
         }
 
-        if (lastadded != movablePawn)
+        if (!SearchList(team.movablePawns, team.playerPawns[movablePawn]))
         {
+            MyLogger($" added {team.playerPawns[movablePawn].name} to movable list");
             team.movablePawns.Add(team.playerPawns[movablePawn]);
             lastadded = movablePawn;
         }
+        else
+        {
+            MyLogger($" tried to add pawn to movable list : ALREADY EXISTS");
+        }
+    }
+    private bool SearchList(List<PlayerScript> list, PlayerScript player)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i] == player)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void MyLogger(string message)

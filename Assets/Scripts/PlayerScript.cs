@@ -4,11 +4,12 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public bool inJail = true;
+    public bool isCanceled = false;
     public bool inhomePath;
     public Transform startPos;
     [SerializeField] int playerIndex;
     public TeamType teamType;
-    [SerializeField] int startIndex;
+    public int startIndex;
     [SerializeField] bool isDebug;
     public int playerPosition = 0;
     [SerializeField] private ParticleSystem selectionIndication;
@@ -31,9 +32,30 @@ public class PlayerScript : MonoBehaviour
         playerIndex = int.Parse(this.gameObject.name);
         teamCount = PlayerPrefs.GetInt("TeamCount", 0);
     }
-    void OnMouseDown()
+    // Turn selection bool off and on
+    public void SelectionSwitch(int value)
     {
-        MyLogger($" {steps}");
+        isSelectable = value > 0 ? true : false;
+        InputHandler.Instance.SetLayer(teamType.ToString());
+        TokenUI();
+    }
+
+    // Turning Particle System off and on
+    private void TokenUI()
+    {
+        if (isSelectable)
+        {
+            selectionIndication.Play();
+        }
+        else
+        {
+            selectionIndication.Stop();
+        }
+    }
+    // Touch Detection
+    public void OnClick()
+    {
+        MyLogger($" hey click is triggered on {name}");
         if (!isSelectable) return;
 
         targetPosition = PlayerPrefs.GetInt("DiceRoll", 0);
@@ -51,28 +73,7 @@ public class PlayerScript : MonoBehaviour
 
         _pawnSelector.DisableSelection(playerIndex - 1);
         selectionIndication.Stop();
-        // GameEvent.EnableButton?.Invoke();
     }
-
-    // Turn selection bool off and on
-    public void SelectionSwitch(int value)
-    {
-        isSelectable = value > 0 ? true : false;
-        TokenUI();
-    }
-
-    private void TokenUI()
-    {
-        if (isSelectable)
-        {
-            selectionIndication.Play();
-        }
-        else
-        {
-            selectionIndication.Stop();
-        }
-    }
-
     private void MyLogger(string message)
     {
         if (isDebug)
