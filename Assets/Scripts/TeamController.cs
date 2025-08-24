@@ -11,20 +11,19 @@ public class TeamController : MonoBehaviour
     private int lastRollValue;
     private int lastTeamIndex;
 
-    void Awake()
-    {
-        teams = GetComponentsInChildren<TeamScript>().
-                Where(t => t.GetType() == typeof(TeamScript)).ToList();
-
-        playerCount = transform.childCount;
-        PlayerPrefs.SetInt("TeamCount", playerCount);
-        PlayerPrefs.Save();    }
     void OnEnable()
     {
         DiceScript.DiceRoll += HandleDiceRoll;
     }
     void Start()
     {
+        playerCount = PlayerPrefs.GetInt("NumberOfPlayers");
+        teams = GetComponentsInChildren<TeamScript>().
+                Where(t => t.GetType() == typeof(TeamScript)).ToList();
+
+        PlayerPrefs.SetInt("TeamCount", playerCount);
+        PlayerPrefs.Save();
+
         UIManager.Instance.SaveNextTeam(teamIndex);
         UIManager.Instance.TurnIndication();
 

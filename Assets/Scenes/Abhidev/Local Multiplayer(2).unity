@@ -665,6 +665,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252135228}
   m_CullTransparentMesh: 1
+--- !u!1001 &333785696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1560958509}
+    m_Modifications:
+    - target: {fileID: 4136507296666218515, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164784116267114991, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_Name
+      value: settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+--- !u!224 &333785697 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7623326653363988787, guid: 98b1f95ee7ae1e5488ce5569c54aac98, type: 3}
+  m_PrefabInstance: {fileID: 333785696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &402871783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2692,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 333785697}
   - {fileID: 19701703}
   - {fileID: 484782194}
   - {fileID: 402871784}
@@ -4097,6 +4204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &1418257246174723590
 GameObject:
@@ -4309,6 +4417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &1737741510997367315
 GameObject:
@@ -4357,6 +4466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!1 &1786989162843160717
 GameObject:
@@ -4422,6 +4532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &1807934492228065880
 Transform:
@@ -4519,6 +4630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!58 &2045667773660186264
 CircleCollider2D:
@@ -4585,6 +4697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8670884776813556563}
   playerIndex: 3
@@ -4623,6 +4736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &2226620338306473990
 GameObject:
@@ -4654,6 +4768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &2263782134810483110
 Transform:
@@ -4897,6 +5012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &2867791207263695351
 Transform:
@@ -5040,6 +5156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &3140047737591146215
 GameObject:
@@ -5071,6 +5188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &3173607548238021696
 Transform:
@@ -5203,6 +5321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &3291713215142492117
 GameObject:
@@ -5251,6 +5370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!212 &3311887651866826407
 SpriteRenderer:
@@ -10244,6 +10364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &3614418757160741077
 Transform:
@@ -10288,6 +10409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &3758518746380556975
 Transform:
@@ -10350,6 +10472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!199 &3883039354216171203
 ParticleSystemRenderer:
@@ -15385,6 +15508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4160201006517506818
 Transform:
@@ -20367,6 +20491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 8835392183405667417}
   playerIndex: 1
@@ -20405,6 +20530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &4338845566429220748
 GameObject:
@@ -20482,6 +20608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!212 &4446213274496270247
 SpriteRenderer:
@@ -20568,6 +20695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 3376282237353996376}
   playerIndex: 2
@@ -20606,6 +20734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4554443260791650694
 Transform:
@@ -20635,6 +20764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4564264275587520143
 Transform:
@@ -20679,6 +20809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &4640862383116722091
 GameObject:
@@ -20741,6 +20872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4695692578402278090
 Transform:
@@ -20785,6 +20917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &4766772455490390465
 Transform:
@@ -20814,6 +20947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!4 &4803144493675705204
 Transform:
@@ -20843,6 +20977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4805118822745333598
 Transform:
@@ -20872,6 +21007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!199 &4811096070790518494
 ParticleSystemRenderer:
@@ -21087,6 +21223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &4933614362301244840
 Transform:
@@ -26077,6 +26214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &5144695283615752044
 Transform:
@@ -26106,6 +26244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!114 &5168552757885786033
 MonoBehaviour:
@@ -26120,6 +26259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 5675946871332137328}
   playerIndex: 3
@@ -26286,6 +26426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!114 &5415415663448220846
 MonoBehaviour:
@@ -26300,6 +26441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4968069131621807913}
   playerIndex: 1
@@ -26339,6 +26481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 4564264275587520143}
   playerIndex: 0
@@ -26412,6 +26555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!198 &5565509187678096033
 ParticleSystem:
@@ -31358,6 +31502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!114 &5706917274036404396
 MonoBehaviour:
@@ -31372,6 +31517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 1345264993980813401}
   playerIndex: 3
@@ -31452,6 +31598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inJail: 1
+  isCanceled: 0
   inhomePath: 0
   startPos: {fileID: 9109843033783547364}
   playerIndex: 0
@@ -31580,6 +31727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &5956528245677578062
 GameObject:
@@ -31782,6 +31930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6228250865344220847
 GameObject:
@@ -31813,6 +31962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6247828720164787553
 Transform:
@@ -31842,6 +31992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6272211526559348681
 GameObject:
@@ -31890,6 +32041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &6280392863026345816
 GameObject:
@@ -31921,6 +32073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &6297564198906016651
 Transform:
@@ -31950,6 +32103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &6390047186465249138
 GameObject:
@@ -36944,6 +37098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6575382221708278416
 Transform:
@@ -36990,6 +37145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6679491342574060810
 GameObject:
@@ -37021,6 +37177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &6703190331954416898
 SpriteRenderer:
@@ -37121,6 +37278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &6737860017480850038
 GameObject:
@@ -37152,6 +37310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6769486785935086790
 Transform:
@@ -37181,6 +37340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &6780074515994529433
 Transform:
@@ -37229,6 +37389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7021511246058458824
 GameObject:
@@ -42139,6 +42300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &7106806790275168524
 Transform:
@@ -42183,6 +42345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7134257979019866018
 Transform:
@@ -47040,6 +47203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &7337177949291517876
 GameObject:
@@ -47087,6 +47251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7403207582464113870
 Transform:
@@ -47116,6 +47281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &7464862142839739958
 Transform:
@@ -47145,6 +47311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7483552496580840098
 Transform:
@@ -47221,6 +47388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7573041166523478086
 GameObject:
@@ -47268,6 +47436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7639134444063886025
 Transform:
@@ -47423,6 +47592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7790152436485314483
 GameObject:
@@ -47454,6 +47624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &7800127887358125817
 GameObject:
@@ -47485,6 +47656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &7835735090421968156
 GameObject:
@@ -47516,6 +47688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7844148098926212694
 Transform:
@@ -47658,6 +47831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &7952267512118687418
 Transform:
@@ -47756,6 +47930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!1 &8089585272519544830
 GameObject:
@@ -47828,6 +48003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &8127273580988003175
 Transform:
@@ -47857,6 +48033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &8231063910573385502
 Transform:
@@ -47886,6 +48063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8262751853534269572
 Transform:
@@ -47915,6 +48093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8279774957581985918
 Transform:
@@ -47961,6 +48140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!114 &8348033077917144194
 MonoBehaviour:
@@ -48035,6 +48215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!1 &8497064195604533937
 GameObject:
@@ -48101,6 +48282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!212 &8565566511089102514
 SpriteRenderer:
@@ -48218,6 +48400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8662753612056128125
 Transform:
@@ -48247,6 +48430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &8670884776813556563
 Transform:
@@ -48325,6 +48509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &8812601546459515873
 GameObject:
@@ -48492,6 +48677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &8968211319927707451
 Transform:
@@ -48521,6 +48707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 2
 --- !u!4 &8980550042985198591
 Transform:
@@ -48600,6 +48787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!4 &9109843033783547364
 Transform:
@@ -48662,6 +48850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1 &9131024800320951553
 GameObject:
@@ -48693,6 +48882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 1
 --- !u!4 &9148775537252859649
 Transform:
@@ -48722,6 +48912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLog: 0
+  allpawns: []
   tileType: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
