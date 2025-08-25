@@ -59,20 +59,7 @@ public class Uimanager : MonoBehaviour
 
     private void LoadNextScene()
     {
-        Debug.Log("the next scene is loaded");
-        if(PlayerPrefs.GetString("player","") != null)
-        {
-
-            Debug.Log(PlayerPrefs.GetString("player", "") + "playernameisempty");
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Index", 0));
-        }
-        else
-        {
-            Debug.Log($"the input area is null{PlayerPrefs.GetString("player","")} ");
-            return;
-            
-        }
-      
+        SceneManager.LoadScene(1);
     }
 
     public void ToggleSelectionPanel()

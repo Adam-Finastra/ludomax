@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class EnableInput : MonoBehaviour
 {
@@ -10,16 +12,26 @@ public class EnableInput : MonoBehaviour
 
     public void allpersonenable(int index)
     {
-        for (int i = 0; i < twopperson.Length; i++)
+        
+        if(index != null)
         {
-            if (twopperson[i] != null)
+            for (int i = 0; i < twopperson.Length; i++)
             {
-                twopperson[i].SetActive(i < index);
+                if (twopperson[i] != null)
+                {
+                    twopperson[i].SetActive(i < index);
+                }
+
             }
-
+            PlayerPrefs.SetInt("NumberOfPlayers", index);
+          
         }
-        PlayerPrefs.SetInt("Index", index - 1);
-
+        else
+        {
+            Debug.Log("the index is null");
+        }
+       
     }
+   
 
 }

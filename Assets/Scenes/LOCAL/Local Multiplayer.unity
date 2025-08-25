@@ -4800,6 +4800,7 @@ MonoBehaviour:
   - {fileID: 510689062}
   - {fileID: 1561298435}
   - {fileID: 1555801255}
+  teamUI: []
   isDebug: 0
 --- !u!114 &1744736769
 MonoBehaviour:
@@ -5313,14 +5314,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gbPair:
-  - first: {fileID: 8757688725143308489}
-    second: {fileID: 711948952}
-  - first: {fileID: 5280798017145631805}
-    second: {fileID: 1103905076}
-  - first: {fileID: 5474579238308085494}
-    second: {fileID: 758404819}
-  - first: {fileID: 5555334900717114684}
-    second: {fileID: 958367691}
+  - Dice: {fileID: 8757688725143308489}
+    UI: {fileID: 711948952}
+  - Dice: {fileID: 5280798017145631805}
+    UI: {fileID: 1103905076}
+  - Dice: {fileID: 5474579238308085494}
+    UI: {fileID: 758404819}
+  - Dice: {fileID: 5555334900717114684}
+    UI: {fileID: 958367691}
 --- !u!1 &1990076836
 GameObject:
   m_ObjectHideFlags: 0
@@ -32794,7 +32795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamIndex: 0
   isDebug: 1
-  t: []
   teams: []
 --- !u!198 &3351120980750251812
 ParticleSystem:
