@@ -52,7 +52,7 @@ public class DiceScript : MonoBehaviour
         diceAnimation.SetActive(true);
         // sfx.sfxinstance.dicesfx();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         diceAnimation.SetActive(false);
 
