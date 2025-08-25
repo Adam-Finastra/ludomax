@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerScript.inhomePath && targetSteps > 56)
         {
-            GameEvent.EnableButton?.Invoke();
+            GameEvent.EnableButtonNow();
             yield break;
         }
             

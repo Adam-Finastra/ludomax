@@ -64,7 +64,7 @@ public class PlayerScript : MonoBehaviour
         {
             playerMovement.JumpToPosition(commonTiles[startIndex].position);
             inJail = false;
-            GameEvent.EnableButton?.Invoke();
+            GameEvent.EnableButtonNow();
         }
         else
         {

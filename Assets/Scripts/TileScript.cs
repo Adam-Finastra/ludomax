@@ -5,8 +5,6 @@ public class TileScript : MonoBehaviour
 {
     [SerializeField] private bool isLog;
     [SerializeField] private List<PlayerScript> allpawns = new List<PlayerScript>();
-    // private bool wasCancelled = false;
-    // public static Action OnCancel;
     public enum TileType
     {
         Normal,
@@ -38,31 +36,32 @@ public class TileScript : MonoBehaviour
         Log($" ready to cancel on {this.name}");
         allpawns.Add(arrivingPlayer);
 
-        // Searching for players of other team on the tile.
-        foreach (var otherPawn in allpawns)
+        foreach (var otherPawn in allpawns)        // Searching for players of other team on the tile.
         {
             if (otherPawn == arrivingPlayer) continue;
             if (otherPawn.teamType == arrivingPlayer.teamType) continue;
             if (otherPawn.playerPosition == arrivingPlayer.playerPosition)
             {
-                CancelPawn(otherPawn); // immediately cancelling pawn found.
+                CancelPawn(otherPawn);          // immediately cancelling pawn found.
                 return;
             }
         }
 
         UIManager.Instance.TurnIndication();
-        GameEvent.EnableButton?.Invoke();
+        GameEvent.EnableButtonNow();
     }
     private void HandleWin(PlayerScript player)
     {
         Log($" {player.name} reached finish line");
-        RemovePlayerFromGame(player,true);
+        // Pop Up 
+        HasTeamFinished(player);               // keep a track of which player has reached the finish line.
+        RemovePlayerFromGame(player,true);        
     }
     private void HandleSafeZone(PlayerScript player)
     {
         Log($" Reached safe zone");
         UIManager.Instance.TurnIndication();
-        GameEvent.EnableButton?.Invoke();
+        GameEvent.EnableButtonNow();
     }
     private void CancelPawn(PlayerScript pawn)
     {
@@ -79,16 +78,25 @@ public class TileScript : MonoBehaviour
     private void RemovePlayerFromGame(PlayerScript player, bool state)
     {
         TeamScript team = player.GetComponentInParent<TeamScript>();
-        team.movablePawns.Remove(player); // removes cancelled player from movable list
+        team.movablePawns.Remove(player);               // removes cancelled player from movable list
         if (state)
         {
-            team.playerPawns.Remove(player); // removes player from the game.
+            team.playerPawns.Remove(player);            // removes player from the game.
         }
-        GameEvent.EnableButton?.Invoke();
+        GameEvent.EnableButtonNow();
 
         TeamController teamController = team.GetComponentInParent<TeamController>();
-        teamController.GiveChance(); // rewards a chance after cancelling
-        UIManager.Instance.TurnIndication();  // showing UI indication
+        teamController.GiveChance();            // rewards a chance after cancelling
+        UIManager.Instance.TurnIndication();    // showing UI indication
+    }
+    private void HasTeamFinished(PlayerScript arrivingPlayer)
+    {
+        allpawns.Add(arrivingPlayer);         // keep a track of entering
+
+        if (allpawns.Count >= 4)        // check if the player count is 4 
+        {
+            GameEvent.TeamFinished(arrivingPlayer.teamType.ToString());
+        }
     }
     private void Log(string message)
     {
